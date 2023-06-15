@@ -1,15 +1,25 @@
 .page {
   width: 100%;
   overflow-x: hidden;
+  background-color: #f5f5f5;
+
+  @media (min-width: $desktop-width) {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 .page__body {
   position: relative;
   margin: 0;
-  display: flex;
+  //
   width: 100%;
-  min-width: 320px;
+  min-width: 374px;
   font-family: "Mont", "Arial", sans-serif;
   font-weight: 400;
   background: #ffffff;
+
+  @media (min-width: $desktop-width) {
+    width: 1600px;
+  }
 }

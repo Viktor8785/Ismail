@@ -1,558 +1,229 @@
 // Get elements
-/* ------------------   Profit  -------------------*/
-const mediaQueryMobileOnly = window.matchMedia('(max-width: 767px');
-const mediaQueryDesktop = window.matchMedia('(min-width: 1920px)');
-const mediaQueryTabletOnly = window.matchMedia('(min-width: 768px) and (max-width: 1919px');
-const cardIcons = document.querySelectorAll('.card__icon');
-const cardTitles = document.querySelectorAll('.card__title');
-const cardSubtitles = document.querySelectorAll('.card__subtitle');
-const items = document.querySelector('.profit__container-card');
-const menus = document.querySelector('.profit__container-menu');
-const prevBtnDesktop = document.querySelector('.slider__toggles-left.slider__toggles-left--desktop');
-const nextBtnDesktop = document.querySelector('.slider__toggles-right.slider__toggles-right--desktop');
-const prevBtnTablet = document.querySelector('.slider__toggles-left.slider__toggles-left--tablet');
-const nextBtnTablet = document.querySelector('.slider__toggles-right.slider__toggles-right--tablet');
-const dots = document.querySelectorAll('.slider__dot');
-const buttons = document.querySelectorAll('.profit__menu-item');
-const buttonsText = document.querySelectorAll('.menu-item__text');
-const buttonsIcon = document.querySelectorAll('.menu-item__icon');
-const buttonAnalitic = document.querySelector('#analitic');
-const buttonAdvertising = document.querySelector('#advertising');
-const buttonTargeting = document.querySelector('#targeting');
-const buttonCreating = document.querySelector('#creating');
-const buttonSegmenting = document.querySelector('#segmenting');
-const buttonVaryables = document.querySelector('#varyables');
-const buttonTaktic = document.querySelector('#taktic');
+/* -------------------- HEADER --------------------*/
+const mainNavGroup = document.querySelector('.main-nav__group');
+const mainNavToggle = document.querySelector('.main-nav__toggle');
 
-/* ------------------- Targetolog ------------------*/
-const targetologTitle = document.querySelector('.targetolog__title');
-const targetologTitleAfter = document.querySelector('.targetolog__title-after');
-const targetolog = document.querySelector('.targetolog');
-const targetologWrapper = document.querySelector('.targetolog__wrapper');
-const targetologWrapperAfter = document.querySelector('.targetolog__wrapper-after');
+/* -----------------  BUILDINGS  ----------------- */
+const buttonLeft = document.querySelector('#button-left');
+const buttonRight = document.querySelector('#button-right');
+const buttonArrowLeft = document.querySelector('#button-arrow-left');
+const buttonArrowRight = document.querySelector('#button-arrow-right');
+const sliderContainer = document.querySelector('#slider-container');
+const buildingsCard = document.querySelectorAll('.buildings__card');
 
-/* -------------------- Heroes --------------------*/
-const heroesCard = document.querySelectorAll('.heroes__card');
-const heroesCardFrame = document.querySelectorAll('.heroes__card-frame');
-const heroes = document.querySelector('.heroes__container');
-const prevBtnHeroesMobile = document.querySelector('.toggles__left.toggles__left--mobile');
-const nextBtnHeroesMobile = document.querySelector('.toggles__right.toggles__right--mobile');
-const prevBtnHeroesTablet = document.querySelector('.toggles__left.toggles__left--tablet');
-const nextBtnHeroesTablet = document.querySelector('.toggles__right.toggles__right--tablet');
-const counter = document.querySelector('.toggles__current-number');
+/* -----------------  PRICE  ----------------- */
+const buttonSquarePrev = document.querySelector('#button-square-prev');
+const buttonSquareNext = document.querySelector('#button-square-next');
+const buttonGaragePrev = document.querySelector('#button-garage-prev');
+const buttonGarageNext = document.querySelector('#button-garage-next');
+const buttonFlorsPrev = document.querySelector('#button-flors-prev');
+const buttonFlorsNext = document.querySelector('#button-flors-next');
+const buttonWallsPrev = document.querySelector('#button-walls-prev');
+const buttonWallsNext = document.querySelector('#button-walls-next');
+const buttonRoofPrev = document.querySelector('#button-roof-prev');
+const buttonRoofNext = document.querySelector('#button-roof-next');
+const buttonFrontPrev = document.querySelector('#button-front-prev');
+const buttonFrontNext = document.querySelector('#button-front-next');
 
-/* -------------------- BENEFIT --------------------*/
-const benefitNumberHours = document.querySelector('#benefit-number-hours');
-const benefitHours = document.querySelector('#benefit-hours');
-const benefitDays = document.querySelector('#benefit-days');
+const buttonContacts = document.querySelector('#button-contacts');
+const buttonConfirm = document.querySelector('#button-confirm');
 
-/* -------------------- FAQ --------------------*/
-const faqQuestion = document.querySelectorAll('.faq__question-item');
-const faqAnswer = document.querySelectorAll('.faq__answer-answer');
-const faqArrowDownMobile = document.querySelectorAll('.faq__arrow-down.faq__arrow-down--mobile');
-const faqArrowRightMobile = document.querySelectorAll('.faq__arrow-right.faq__arrow-right--mobile');
-const faqArrowDownDesktop = document.querySelectorAll('.faq__arrow-down.faq__arrow-down--desktop');
-const faqArrowRightDesktop = document.querySelectorAll('.faq__arrow-right.faq__arrow-right--desktop');
+const priceSquareForm = document.querySelectorAll('.price__square-form');
 
-/* --------------------  MODAL  ----------------*/
-const modalWindow = document.querySelector('#modal-window');
-const menu = document.querySelector('#menu');
-const modalMenu = document.querySelector('#modal-menu');
-const modal = document.querySelector('.modal');
-const fLink = document.querySelector('#f-link');
-const tLink = document.querySelector('#t-link');
-const cLink = document.querySelector('#c-link');
-const faqLink = document.querySelector('#faq-link');
+const priceCalc = document.querySelector('.price__calc');
+const priceCalcGarage = document.querySelector('.price__calc-garage');
+const priceCalcFlors = document.querySelector('.price__calc-flors');
+const priceCalcWalls = document.querySelector('.price__calc-walls');
+const priceCalcRoof = document.querySelector('.price__calc-roof');
+const priceCalcFront = document.querySelector('.price__calc-front');
+const priceCalcContacts = document.querySelector('.price__calc-contacts');
+const priceCalcConfirm = document.querySelector('.price__calc-confirm');
 
-// Set initial state Profit
-const sliderItemsLength = 7;
-let leftXMax = -260;
-let leftXMaxButton1 = -207;
-let leftXMaxButton2 = -297;
+// Set initial state BUILDINGS
+const sliderItemsLength = buildingsCard.length;
+let leftXMax = -382;
 let leftXs = [];
-let buttonsRef = [];
-let leftXsButton = [];
-let currentIndex = 0;
+let currentIndexBuildings = 0;
 
 for(i = 0; i < sliderItemsLength; i++) {
   leftXs[i] = leftXMax * i;
 }
+let leftX = leftXs[currentIndexBuildings];
+sliderContainer.style.left = leftX;
 
-buttonsRef[0] = buttonAnalitic;
-buttonsRef[1] = buttonAdvertising;
-buttonsRef[2] = buttonTargeting;
-buttonsRef[3] = buttonCreating;
-buttonsRef[4] = buttonSegmenting;
-buttonsRef[5] = buttonVaryables;
-buttonsRef[6] = buttonTaktic;
+// Set initial state PRICE
+const square = [75, 100, 125, 150, 175, 200, 250];
+const garage = ['На 1 авто', 'На 2 авто', 'Без гаража'];
+const flors = [1, 2];
+const walls = ['Газобетон', 'Кирпич', 'Клеёный брус'];
+const roof = ['Плоская', 'Металлочерепица', 'Гибкая черепица'];
+const front = ['Штукатурка по утеплителю', 'Подмосковный кирпич', 'Комбинированный', 'Без фасада'];
 
-leftXsButton[0] = 0;
-leftXsButton[1] = leftXsButton[0] + leftXMaxButton1;
-leftXsButton[2] = leftXsButton[1] + leftXMaxButton2;
-leftXsButton[3] = leftXsButton[2] + leftXMaxButton2;
-leftXsButton[4] = leftXsButton[3] + leftXMaxButton2;
-leftXsButton[5] = leftXsButton[4] + leftXMaxButton1;
-leftXsButton[6] = leftXsButton[5] + leftXMaxButton1;
+let squareCurrent = 0;
+let garageCurrent = '';
+let florsCurrent = 0;
+let wallsCurrent = '';
+let roofCurrent = '';
+let contactsNameCurrent = '';
+let contactsPhoneCurrent = '';
 
-let leftX = leftXs[currentIndex];
-let leftXButton = leftXsButton[currentIndex];
+//handleWidthChangeMobile(mediaQueryMobileOnly);
+//handleWidthChangeDesktop(mediaQueryDesktop);
 
-items.style.left = leftX;
-menus.style.left = leftXButton;
-
-// Set initial state Heroes
-const sliderHeroesLength = 4;
-let leftXHeroesMax = -258;
-let leftHeroesXs = [];
-let currentHeroesIndex = 0;
-
-for(i = 0; i < sliderHeroesLength; i++) {
-  leftHeroesXs[i] = leftXHeroesMax * i;
-}
-let leftHeroesX = leftHeroesXs[currentHeroesIndex];
-
-heroes.style.left = leftHeroesX + 'px';
-counter.innerHTML = (currentHeroesIndex + 1) + '/4';
-
-// Set initial state Modal
-let menuActive = false;
-
-handleWidthChangeMobile(mediaQueryMobileOnly);
-handleWidthChangeTablet(mediaQueryTabletOnly);
-handleWidthChangeDesktop(mediaQueryDesktop);
-
-/* ----------------  Profit  -------------- */
-// Handle previous button desktop
-prevBtnDesktop.addEventListener('click', () => {
- dots[currentIndex].classList.remove('slider__dot--active');
- buttons[currentIndex].classList.remove('profit__menu-item--active');
- buttonsText[currentIndex].classList.remove('menu-item__text--active');
- buttonsIcon[currentIndex].classList.remove('menu-item__icon--active');
- currentIndex--;
- if (currentIndex < 0) {
-  currentIndex = 0;
-}
- leftX = leftXs[currentIndex];
- items.style.left = leftX + 'px';
- dots[currentIndex].classList.add('slider__dot--active');
- buttons[currentIndex].classList.add('profit__menu-item--active');
- buttonsText[currentIndex].classList.add('menu-item__text--active');
- buttonsIcon[currentIndex].classList.add('menu-item__icon--active');
-});
-
-// Handle next button desktop
-nextBtnDesktop.addEventListener('click', () => {
- dots[currentIndex].classList.remove('slider__dot--active');
- buttons[currentIndex].classList.remove('profit__menu-item--active');
- buttonsText[currentIndex].classList.remove('menu-item__text--active');
- buttonsIcon[currentIndex].classList.remove('menu-item__icon--active');
- currentIndex++;
- if (currentIndex >= sliderItemsLength) {
-  currentIndex = sliderItemsLength - 1;
+/* ----------------  HEADER  -------------- */
+mainNavToggle.addEventListener('click', () => {
+ if (mainNavToggle.classList.contains('main-nav__toggle--opened')){
+  mainNavToggle.classList.remove('main-nav__toggle--opened');
+  mainNavGroup.classList.remove('main-nav__group--opened');
+ } else {
+  mainNavToggle.classList.add('main-nav__toggle--opened');
+  mainNavGroup.classList.add('main-nav__group--opened');
  }
- leftX = leftXs[currentIndex];
- items.style.left = leftX + 'px';
- dots[currentIndex].classList.add('slider__dot--active');
- buttons[currentIndex].classList.add('profit__menu-item--active');
- buttonsText[currentIndex].classList.add('menu-item__text--active');
- buttonsIcon[currentIndex].classList.add('menu-item__icon--active');
 });
 
-// Handle previous button tablet
-prevBtnTablet.addEventListener('click', () => {
-  dots[currentIndex].classList.remove('slider__dot--active');
-  buttons[currentIndex].classList.remove('profit__menu-item--active');
-  buttonsText[currentIndex].classList.remove('menu-item__text--active');
-  buttonsIcon[currentIndex].classList.remove('menu-item__icon--active');
-  currentIndex--;
-  if (currentIndex < 0) {
-   currentIndex = 0;
- }
-  leftX = leftXs[currentIndex];
-  items.style.left = leftX + 'px';
-  leftXButton = leftXsButton[currentIndex];
-  menus.style.left = leftXButton + 'px';
-  dots[currentIndex].classList.add('slider__dot--active');
-  buttons[currentIndex].classList.add('profit__menu-item--active');
-  buttonsText[currentIndex].classList.add('menu-item__text--active');
-  buttonsIcon[currentIndex].classList.add('menu-item__icon--active');
+/* ----------------  BUILDINGS  -------------- */
+
+buttonLeft.addEventListener('click', () => {
+  currentIndexBuildings--;
+  if (!buttonRight.classList.contains('buildings__button--active')) {
+    buttonRight.classList.add('buildings__button--active');
+    buttonArrowRight.classList.add('button__arrow-right--active')
+  }
+  if (currentIndexBuildings < 0) {
+    currentIndexBuildings = 0;
+  }
+  if (currentIndexBuildings == 0){
+    buttonLeft.classList.remove('buildings__button--active');
+    buttonArrowLeft.classList.remove('button__arrow-left--active')
+  }
+  leftX = leftXs[currentIndexBuildings];
+  sliderContainer.style.left = leftX + 'px';
  });
 
- // Handle next button tablet
- nextBtnTablet.addEventListener('click', () => {
-  dots[currentIndex].classList.remove('slider__dot--active');
-  buttons[currentIndex].classList.remove('profit__menu-item--active');
-  buttonsText[currentIndex].classList.remove('menu-item__text--active');
-  buttonsIcon[currentIndex].classList.remove('menu-item__icon--active');
-  currentIndex++;
-  if (currentIndex >= sliderItemsLength) {
-   currentIndex = sliderItemsLength - 1;
+ buttonRight.addEventListener('click', () => {
+  currentIndexBuildings++;
+  if (!buttonLeft.classList.contains('buildings__button--active')) {
+    buttonLeft.classList.add('buildings__button--active');
+    buttonArrowLeft.classList.add('button__arrow-left--active')
   }
-  leftX = leftXs[currentIndex];
-  items.style.left = leftX + 'px';
-  leftXButton = leftXsButton[currentIndex];
-  menus.style.left = leftXButton + 'px';
-  dots[currentIndex].classList.add('slider__dot--active');
-  buttons[currentIndex].classList.add('profit__menu-item--active');
-  buttonsText[currentIndex].classList.add('menu-item__text--active');
-  buttonsIcon[currentIndex].classList.add('menu-item__icon--active');
+  if (currentIndexBuildings == sliderItemsLength - 1) {
+    buttonRight.classList.remove('buildings__button--active');
+    buttonArrowRight.classList.remove('button__arrow-right--active')
+  }
+  if (currentIndexBuildings == sliderItemsLength) {
+    currentIndexBuildings = sliderItemsLength - 1;
+  }
+  leftX = leftXs[currentIndexBuildings];
+  sliderContainer.style.left = leftX + 'px';
  });
 
- // Handle dots
-dots.forEach((dot, index) => {
- dot.addEventListener('click', () => {
-  dots[currentIndex].classList.remove('slider__dot--active');
-  buttons[currentIndex].classList.remove('profit__menu-item--active');
-  buttonsText[currentIndex].classList.remove('menu-item__text--active');
-  buttonsIcon[currentIndex].classList.remove('menu-item__icon--active');
-  cardIcons[currentIndex].classList.remove('card__icon--active');
-  cardTitles[currentIndex].classList.remove('card__title--active');
-  cardSubtitles[currentIndex].classList.remove('card__subtitle--active');
-  currentIndex = index;
-  leftX = leftXs[currentIndex];
-  items.style.left = leftX + 'px';
-  handleWidthChangeTabletLeft(mediaQueryTabletOnly);
-  dots[currentIndex].classList.add('slider__dot--active');
-  buttons[currentIndex].classList.add('profit__menu-item--active');
-  buttonsText[currentIndex].classList.add('menu-item__text--active');
-  buttonsIcon[currentIndex].classList.add('menu-item__icon--active');
-  cardIcons[currentIndex].classList.add('card__icon--active');
-  cardTitles[currentIndex].classList.add('card__title--active');
-  cardSubtitles[currentIndex].classList.add('card__subtitle--active');
- });
-});
-
-// Hadle buttons
-buttonsRef.forEach((button, index) => {
-  button.addEventListener('click', () => {
-   dots[currentIndex].classList.remove('slider__dot--active');
-   buttons[currentIndex].classList.remove('profit__menu-item--active');
-   buttonsText[currentIndex].classList.remove('menu-item__text--active');
-   buttonsIcon[currentIndex].classList.remove('menu-item__icon--active');
-   currentIndex = index;
-   leftX = leftXs[currentIndex];
-   items.style.left = leftX + 'px';
-   dots[currentIndex].classList.add('slider__dot--active');
-   buttons[currentIndex].classList.add('profit__menu-item--active');
-   buttonsText[currentIndex].classList.add('menu-item__text--active');
-   buttonsIcon[currentIndex].classList.add('menu-item__icon--active');
-  });
- });
-
-function handleWidthChangeDesktop(e) {
-  if (e.matches) {
-  // Profit
-    leftXMax = -874;
-    startSettings();
-
-  // FAQ
-    faqArrowDownDesktop.forEach((arrow) => {
-      if (arrow.classList.contains('arrow-disactive')) {
-        arrow.classList.remove('arrow-disactive');
+ /* -----------------  PRICE  ----------------- */
+ buttonSquareNext.addEventListener('click', () => {
+    Array.from(priceSquareForm[0].elements).forEach((element, index) => {
+      if (element.checked) {
+        squareCurrent = square[index];
+        priceCalc.classList.remove('price__calc--active');
+        priceCalcGarage.classList.add('price__calc-garage--active');
       }
     });
-
-    faqArrowRightMobile.forEach((arrow, index) => {
-      if (arrow.classList.contains('arrow-active')) {
-        arrow.classList.remove('arrow-active');
-        faqArrowRightDesktop[index].classList.add('arrow-active');
-        faqArrowDownDesktop[index].classList.add('arrow-disactive');
+  });
+  buttonGaragePrev.addEventListener('click', () => {
+    priceCalc.classList.add('price__calc--active');
+    priceCalcGarage.classList.remove('price__calc-garage--active');
+  });
+  buttonGarageNext.addEventListener('click', () => {
+    Array.from(priceSquareForm[1].elements).forEach((element, index) => {
+      if (element.checked) {
+        garageCurrent = garage[index];
+        priceCalcFlors.classList.add('price__calc-flors--active');
+        priceCalcGarage.classList.remove('price__calc-garage--active');
       }
     });
-  // MODAL
-    menuActive = false;
-  }
-}
-
-function handleWidthChangeTablet(e) {
-  if (e.matches) {
-  // Profit
-    leftXMax = -552;
-    startSettings();
-
-  // Heroes
-    leftXHeroesMax = -290;
-    startHeroesSettings();
-
-  // FAQ
-    faqArrowDownMobile.forEach((arrow) => {
-      if (arrow.classList.contains('arrow-disactive')) {
-        arrow.classList.remove('arrow-disactive');
+  });
+  buttonFlorsPrev.addEventListener('click', () => {
+    priceCalcFlors.classList.remove('price__calc-flors--active');
+    priceCalcGarage.classList.add('price__calc-garage--active');
+  });
+  buttonFlorsNext.addEventListener('click', () => {
+    Array.from(priceSquareForm[2].elements).forEach((element, index) => {
+      if (element.checked) {
+        florsCurrent = flors[index];
+        priceCalcFlors.classList.remove('price__calc-flors--active');
+        priceCalcWalls.classList.add('price__calc-walls--active');
       }
     });
-
-    faqArrowRightMobile.forEach((arrow, index) => {
-      if (arrow.classList.contains('arrow-active')) {
-        faqArrowDownMobile[index].classList.add('arrow-disactive');
+  });
+  buttonWallsPrev.addEventListener('click', () => {
+    priceCalcFlors.classList.add('price__calc-flors--active');
+    priceCalcWalls.classList.remove('price__calc-walls--active');
+  });
+  buttonWallsNext.addEventListener('click', () => {
+    Array.from(priceSquareForm[3].elements).forEach((element, index) => {
+      if (element.checked) {
+        wallsCurrent = walls[index];
+        priceCalcRoof.classList.add('price__calc-roof--active');
+        priceCalcWalls.classList.remove('price__calc-walls--active');
       }
     });
-
-    faqArrowRightDesktop.forEach((arrow, index) => {
-      if (arrow.classList.contains('arrow-active')) {
-        arrow.classList.remove('arrow-active');
-        faqArrowRightMobile[index].classList.add('arrow-active');
-        faqArrowDownMobile[index].classList.add('arrow-disactive');
+  });
+  buttonRoofPrev.addEventListener('click', () => {
+    priceCalcRoof.classList.remove('price__calc-roof--active');
+    priceCalcWalls.classList.add('price__calc-walls--active');
+  });
+  buttonRoofNext.addEventListener('click', () => {
+    Array.from(priceSquareForm[4].elements).forEach((element, index) => {
+      if (element.checked) {
+        roofCurrent = roof[index];
+        priceCalcRoof.classList.remove('price__calc-roof--active');
+        priceCalcFront.classList.add('price__calc-front--active');
       }
     });
-  // MODAL
-    menuActive = false;
-  }
-}
-
-function handleWidthChangeMobile(e) {
-  if (e.matches) {
-  // Profit
-    leftXMax = -260;
-    startSettings();
-
-  // Heroes
-    leftXHeroesMax = -258;
-    startHeroesSettings();
-
-  // FAQ
-    faqArrowDownMobile.forEach((arrow) => {
-      if (arrow.classList.contains('arrow-disactive')) {
-        arrow.classList.remove('arrow-disactive');
+  });
+  buttonFrontPrev.addEventListener('click', () => {
+    priceCalcRoof.classList.add('price__calc-roof--active');
+    priceCalcFront.classList.remove('price__calc-front--active');
+  });
+  buttonFrontNext.addEventListener('click', () => {
+    Array.from(priceSquareForm[5].elements).forEach((element, index) => {
+      if (element.checked) {
+        frontCurrent = front[index];
+        priceCalcContacts.classList.add('price__calc-contacts--active');
+        priceCalcFront.classList.remove('price__calc-front--active');
       }
     });
-
-    faqArrowRightMobile.forEach((arrow, index) => {
-      if (arrow.classList.contains('arrow-active')) {
-        faqArrowDownMobile[index].classList.add('arrow-disactive');
+  });
+  buttonContacts.addEventListener('click', () => {
+    let formElements = Array.from(priceSquareForm[6].elements);
+      if (formElements[0].validity.valid && formElements[1].validity.valid && formElements[2].validity.valid) {
+        contactsNameCurrent = formElements[0].value;
+        contactsPhoneCurrent = formElements[1].value;
+        priceCalcContacts.classList.remove('price__calc-contacts--active');
+        priceCalcConfirm.classList.add('price__calc-confirm--active');
       }
+  });
+  buttonConfirm.addEventListener('click', () => {
+    let formElements = Array.from(priceSquareForm[6].elements);
+    Array.from(priceSquareForm[0].elements).forEach(element => {
+      element.checked = false
     });
-
-    faqArrowRightDesktop.forEach((arrow, index) => {
-      if (arrow.classList.contains('arrow-active')) {
-        arrow.classList.remove('arrow-active');
-        faqArrowRightMobile[index].classList.add('arrow-active');
-        faqArrowDownMobile[index].classList.add('arrow-disactive');
-      }
+    Array.from(priceSquareForm[1].elements).forEach(element => {
+      element.checked = false
     });
-
-  // MODAL
-    menuActive = true;
-  }
-}
-
-function handleWidthChangeTabletLeft(e) {
-  if (e.matches) {
-    leftXButton = leftXsButton[currentIndex];
-    menus.style.left = leftXButton + 'px';
-  }
-}
-
-function startSettings() {
-  dots[currentIndex].classList.remove('slider__dot--active');
-  buttons[currentIndex].classList.remove('profit__menu-item--active');
-  buttonsText[currentIndex].classList.remove('menu-item__text--active');
-  buttonsIcon[currentIndex].classList.remove('menu-item__icon--active');
-  cardIcons[currentIndex].classList.remove('card__icon--active');
-  cardTitles[currentIndex].classList.remove('card__title--active');
-  cardSubtitles[currentIndex].classList.remove('card__subtitle--active');
-
-  currentIndex = 0;
-
-  for(i = 0; i < sliderItemsLength; i++) {
-    leftXs[i] = leftXMax * i;
-  }
-
-  leftX = leftXs[currentIndex];
-  leftXButton = leftXsButton[currentIndex];
-
-  items.style.left = leftX;
-  menus.style.left = leftXButton;
-
-  dots[currentIndex].classList.add('slider__dot--active');
-  buttons[currentIndex].classList.add('profit__menu-item--active');
-  buttonsText[currentIndex].classList.add('menu-item__text--active');
-  buttonsIcon[currentIndex].classList.add('menu-item__icon--active');
-  cardIcons[currentIndex].classList.add('card__icon--active');
-  cardTitles[currentIndex].classList.add('card__title--active');
-  cardSubtitles[currentIndex].classList.add('card__subtitle--active');
-}
-
-mediaQueryDesktop.addEventListener('change', handleWidthChangeDesktop);
-mediaQueryTabletOnly.addEventListener('change', handleWidthChangeTablet);
-mediaQueryTabletOnly.addEventListener('change', handleWidthChangeTabletLeft);
-mediaQueryMobileOnly.addEventListener('change', handleWidthChangeMobile);
-
-/* ------------------ Targetolog  ---------------------------*/
-targetologTitle.addEventListener('click', () => {
-  if (targetolog.classList.contains('targetolog--after')) {
-    targetolog.classList.remove('targetolog--after');
-    targetologWrapper.classList.remove('targetolog__wrapper--after');
-    targetologWrapperAfter.classList.remove('targetolog__wrapper-after--after');
-  } else {
-    targetolog.classList.add('targetolog--after');
-    targetologWrapper.classList.add('targetolog__wrapper--after');
-    targetologWrapperAfter.classList.add('targetolog__wrapper-after--after');
-  }
-});
-
-targetologTitleAfter.addEventListener('click', () => {
-  if (targetolog.classList.contains('targetolog--after')) {
-    targetolog.classList.remove('targetolog--after');
-    targetologWrapper.classList.remove('targetolog__wrapper--after');
-    targetologWrapperAfter.classList.remove('targetolog__wrapper-after--after');
-  } else {
-    targetolog.classList.add('targetolog--after');
-    targetologWrapper.classList.add('targetolog__wrapper--after');
-    targetologWrapperAfter.classList.add('targetolog__wrapper-after--after');
-  }
-});
-
-/* -----------------  Heroes  -----------------------------*/
-// Handle previous button mobile
-prevBtnHeroesMobile.addEventListener('click', () => {
-  heroesCard[currentHeroesIndex].classList.remove('heroes__card--active');
-  heroesCardFrame[currentHeroesIndex].classList.remove('heroes__card-frame--active');
-  currentHeroesIndex--;
-  if (currentHeroesIndex < 0) {
-    currentHeroesIndex = 0;
- }
-  leftHeroesX = leftHeroesXs[currentHeroesIndex];
-  heroes.style.left = leftHeroesX + 'px';
-  counter.innerHTML = (currentHeroesIndex + 1) + '/4';
-  heroesCard[currentHeroesIndex].classList.add('heroes__card--active');
-  heroesCardFrame[currentHeroesIndex].classList.add('heroes__card-frame--active');
-});
-
- // Handle next button mobile
- nextBtnHeroesMobile.addEventListener('click', () => {
-  heroesCard[currentHeroesIndex].classList.remove('heroes__card--active');
-  heroesCardFrame[currentHeroesIndex].classList.remove('heroes__card-frame--active');
-  currentHeroesIndex++;
-  if (currentHeroesIndex >= sliderHeroesLength) {
-    currentHeroesIndex = sliderHeroesLength - 1;
-  }
-  leftHeroesX = leftHeroesXs[currentHeroesIndex];
-  heroes.style.left = leftHeroesX + 'px';
-  counter.innerHTML = (currentHeroesIndex + 1) + '/4';
-  heroesCard[currentHeroesIndex].classList.add('heroes__card--active');
-  heroesCardFrame[currentHeroesIndex].classList.add('heroes__card-frame--active');
- });
-
- // Handle previous button tablet
- prevBtnHeroesTablet.addEventListener('click', () => {
-  heroesCard[currentHeroesIndex].classList.remove('heroes__card--active');
-  heroesCardFrame[currentHeroesIndex].classList.remove('heroes__card-frame--active');
-  currentHeroesIndex--;
-  if (currentHeroesIndex < 0) {
-    currentHeroesIndex = 0;
-  }
-  leftHeroesX = leftHeroesXs[currentHeroesIndex];
-  heroes.style.left = leftHeroesX + 'px';
-  counter.innerHTML = (currentHeroesIndex + 1) + '/4';
-  heroesCard[currentHeroesIndex].classList.add('heroes__card--active');
-  heroesCardFrame[currentHeroesIndex].classList.add('heroes__card-frame--active');
- });
-
-  // Handle next button tablet
-  nextBtnHeroesTablet.addEventListener('click', () => {
-    heroesCard[currentHeroesIndex].classList.remove('heroes__card--active');
-    heroesCardFrame[currentHeroesIndex].classList.remove('heroes__card-frame--active');
-    currentHeroesIndex++;
-    if (currentHeroesIndex >= sliderHeroesLength) {
-      currentHeroesIndex = sliderHeroesLength - 1;
-    }
-    leftHeroesX = leftHeroesXs[currentHeroesIndex];
-    heroes.style.left = leftHeroesX + 'px';
-    counter.innerHTML = (currentHeroesIndex + 1) + '/4';
-    heroesCard[currentHeroesIndex].classList.add('heroes__card--active');
-    heroesCardFrame[currentHeroesIndex].classList.add('heroes__card-frame--active');
-  });
-
-  function startHeroesSettings() {
-    currentHeroesIndex = 0;
-    for(i = 0; i < sliderHeroesLength; i++) {
-      leftHeroesXs[i] = leftXHeroesMax * i;
-    }
-    leftHeroesX = leftHeroesXs[currentHeroesIndex];
-    heroes.style.left = leftHeroesX;
-  }
-
-  /* ----------------- BENEFIT  ----------------*/
-  benefitHours.addEventListener('input', () => {
-    if (benefitHours.value <= 1) {
-      benefitHours.value = 1;
-    }
-  });
-  benefitDays.addEventListener('input', () => {
-    if (benefitDays.value <= 1) {
-      benefitDays.value = 1;
-    }
-  });
-
-
-  /* ----------------  FAQ  -------------- */
-  faqArrowDownMobile.forEach((arrow, index) => {
-    arrow.addEventListener('click', () => {
-      arrow.classList.add('arrow-disactive');
-      faqArrowDownDesktop[index].classList.add('arrow-disactive');
-      faqArrowRightMobile[index].classList.add('arrow-active');
-      faqAnswer[index].classList.add('arrow-active');
-      faqQuestion[index].classList.add('faq__question-item--active');
+    Array.from(priceSquareForm[2].elements).forEach(element => {
+      element.checked = false
     });
-   });
-
-   faqArrowRightMobile.forEach((arrow, index) => {
-    arrow.addEventListener('click', () => {
-      arrow.classList.remove('arrow-active');
-      faqArrowDownMobile[index].classList.remove('arrow-disactive');
-      faqAnswer[index].classList.remove('arrow-active');
-      faqQuestion[index].classList.remove('faq__question-item--active');
+    Array.from(priceSquareForm[3].elements).forEach(element => {
+      element.checked = false
     });
-   });
-
-   faqArrowDownDesktop.forEach((arrow, index) => {
-    arrow.addEventListener('click', () => {
-      arrow.classList.add('arrow-disactive');
-      faqArrowDownMobile[index].classList.add('arrow-disactive');
-      faqArrowRightDesktop[index].classList.add('arrow-active');
-      faqAnswer[index].classList.add('arrow-active');
-      faqQuestion[index].classList.add('faq__question-item--active');
+    Array.from(priceSquareForm[4].elements).forEach(element => {
+      element.checked = false
     });
-   });
-
-   faqArrowRightDesktop.forEach((arrow, index) => {
-    arrow.addEventListener('click', () => {
-      arrow.classList.remove('arrow-active');
-      faqArrowDownDesktop[index].classList.remove('arrow-disactive');
-      faqAnswer[index].classList.remove('arrow-active');
-      faqQuestion[index].classList.remove('faq__question-item--active');
+    Array.from(priceSquareForm[5].elements).forEach(element => {
+      element.checked = false
     });
-  });
-
-  /* ----------------  MODAL  --------------*/
-  menu.addEventListener('click', () => {
-    if (menuActive) {
-      modal.classList.add('modal--active');
-    }
-  });
-
-  modalMenu.addEventListener('click', () => {
-    modal.classList.remove('modal--active');
-  });
-
-  fLink.addEventListener('click', () => {
-    modal.classList.remove('modal--active');
-  });
-
-  tLink.addEventListener('click', () => {
-    modal.classList.remove('modal--active');
-  });
-
-  cLink.addEventListener('click', () => {
-    modal.classList.remove('modal--active');
-  });
-
-  faqLink.addEventListener('click', () => {
-    modal.classList.remove('modal--active');
-  });
-
-  window.addEventListener('click', (ev) => {
-    if (!ev.composedPath().includes(menu) && !ev.composedPath().includes(modalWindow)) {
-      modal.classList.remove('modal--active');
-    }
+    formElements[0].value = '';
+    formElements[1].value = '';
+    formElements[2].checked = false;
+    priceCalc.classList.add('price__calc--active');
+    priceCalcConfirm.classList.remove('price__calc-confirm--active');
   });

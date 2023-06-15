@@ -1,0 +1,203 @@
+.buildings {
+  margin-top: 370px;
+  width: 100%;
+
+  @media (min-width: $desktop-width) {
+    margin-top: 80px;
+  }
+}
+
+.buildings__header {
+  display: flex;
+  width: calc(100% - 8px);
+  margin-left: 4px;
+  margin-right: 4px;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (min-width: $desktop-width) {
+    width: calc(100% - 300px);
+    margin-left: 150px;
+    margin-right: 150px;
+  }
+}
+
+.buildings__title {
+  font-family: 'Mont';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 36px;
+  color: $main-text;
+
+  @media (min-width: $desktop-width) {
+    font-size: 40px;
+    line-height: 51px;
+  }
+}
+
+.buildings__buttons {
+  position: relative;
+  display: flex;
+}
+
+.buildings__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #B9C1C9;
+  background-color: #ffffff;
+
+  @media (min-width: $desktop-width) {
+    width: 52px;
+    height: 52px;
+  }
+  &:hover {
+    & .button__arrow-left,
+    & .button__arrow-right {
+      &--active {
+        border-bottom: 2px solid #ffffff;
+        border-right: 2px solid #ffffff;
+      }
+
+      @media (hover: none) and (pointer: coarse) {
+        border-bottom: 2px solid #B9C1C9;
+        border-right: 2px solid #B9C1C9;
+      }
+    }
+  }
+}
+
+.buildings__button:hover.buildings__button--active{
+  background-color: #23252D;
+  cursor: pointer;
+
+  @media (hover: none) and (pointer: coarse) {
+    background-color: #ffffff;
+  }
+}
+
+.buildings__button-left {
+  margin-right: 12px;
+}
+
+.button__arrow-left,
+.button__arrow-right {
+  width: 11px;
+  height: 11px;
+  border-bottom: 2px solid #B9C1C9;
+  border-right: 2px solid #B9C1C9;
+  transform: rotate(135deg);
+  &--active {
+    border-bottom: 2px solid #23252D;
+    border-right: 2px solid #23252D;
+  }
+}
+
+.button__arrow-right {
+  transform: rotate(-45deg);
+}
+
+.buildings__slider {
+  width: calc(100% - 8px);
+  margin-left: 4px;
+  overflow-x: hidden;
+
+  @media (min-width: $desktop-width) {
+    width: calc(100% - 300px);
+    margin-left: 150px;
+  }
+}
+
+.buildings__slider-container {
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  transition: left 0.3s;
+}
+
+.buildings__card {
+  width: 374px;
+  min-width: 374px;
+  max-width: 374px;
+  margin-right: 8px;
+}
+
+.buildings__picture {
+  line-height: 0;
+}
+
+.buildings__img {
+  width: 366px;
+  object-fit: contain;
+}
+
+.buildings__card-text {
+  display: grid;
+  grid-template-rows: 150px min-content;
+}
+
+.buildings__card-title {
+  width: 270px;
+  margin: 0;
+  margin-top: 20px;
+  margin-left: 12px;
+  font-family: 'Mont';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 26px;
+  color: $main-text;
+}
+
+.buildings__card-wrapper {
+  display: flex;
+  margin-top: 10px;
+  margin-left: 12px;
+  align-items: center;
+}
+
+.buildings__card-subtitle {
+  margin: 0;
+  font-family: 'Mont';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  color: $main-text;
+}
+
+.buildings__card-divider {
+  width: 8px;
+  height: 8px;
+  margin-left: 12px;
+  margin-right: 12px;
+  border-radius: 50%;
+  background-color: $primary;
+}
+
+.buildings__price {
+  display: flex;
+  width: 342px;
+  height: 56px;
+  margin-left: 12px;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #B9C1C9;
+
+  @media (min-width: $desktop-width) {
+    width: 178px;
+  }
+}
+
+.buildings__price-text {
+  font-family: 'Mont';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 18px;
+  text-transform: uppercase;
+  color: $main-text;
+}

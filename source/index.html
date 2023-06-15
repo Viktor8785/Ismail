@@ -9,9 +9,643 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body class="page__body">
-  <script>
-    alert(document.body.clientWidth);
-
-  </script>
+    <svg style="display: none">
+      <symbol id="logo" width="44" height="40" viewBox="0 0 44 40">
+        <path d="M43.4814 19.2148L36.3927 12.724V3.15615C36.3927 2.41019 35.8087 1.807 35.0878 1.807H29.8655C29.1447 1.807 28.5606 2.41019 28.5606 3.15615V5.55286L22.8657 0.339837C22.3706 -0.113279 21.63 -0.113279 21.1334 0.339837L0.517791 19.2148C0.111516 19.5864 -0.0281407 20.1793 0.163711 20.7024C0.356974 21.2269 0.842247 21.5737 1.38395 21.5737H7.91115V38.54C7.91115 39.149 8.30473 39.6415 8.83797 39.8105C8.94236 39.8732 9.05662 39.9198 9.1864 39.9198H21.9996C22.3889 39.9198 22.7049 39.592 22.7049 39.1913C22.7049 38.7906 22.3889 38.4628 21.9996 38.4628H10.5223V37.0058H16.3569C16.7462 37.0058 17.0622 36.678 17.0622 36.2774C17.0622 35.8767 16.7462 35.5489 16.3569 35.5489H10.5223V34.0919H16.3569C16.7462 34.0919 17.0622 33.7641 17.0622 33.3634C17.0622 32.9628 16.7462 32.6349 16.3569 32.6349H10.5223V31.178H21.9996C22.3889 31.178 22.7049 30.8502 22.7049 30.4495C22.7049 30.0488 22.3889 29.721 21.9996 29.721H10.5223V28.2641H16.3569C16.7462 28.2641 17.0622 27.9362 17.0622 27.5356C17.0622 27.1349 16.7462 26.8071 16.3569 26.8071H10.5223V25.3501H16.3569C16.7462 25.3501 17.0622 25.0223 17.0622 24.6216C17.0622 24.221 16.7462 23.8932 16.3569 23.8932H10.5223V22.4362H21.9996C22.3889 22.4362 22.7049 22.1084 22.7049 21.7077C22.7049 21.307 22.3889 20.9792 21.9996 20.9792H10.5223V20.2274C10.5223 19.4829 9.93829 18.8797 9.21603 18.8797H4.82459L21.9996 3.14887L28.998 9.55661C29.3831 9.91065 29.929 9.99515 30.3988 9.77806C30.8685 9.56098 31.169 9.08018 31.169 8.54838V4.50385H33.7816V13.3316C33.7816 13.7177 33.9396 14.0849 34.2217 14.3398L39.1746 18.8754H34.7845C34.0609 18.8754 33.4783 19.4785 33.4783 20.2231V38.5386C33.4783 39.2845 34.0609 39.8877 34.7845 39.8877C35.5054 39.8877 36.0894 39.2845 36.0894 38.5386V21.5722H42.6152C43.1569 21.5722 43.6436 21.2269 43.8355 20.7009C44.0273 20.1793 43.8862 19.5864 43.4814 19.2148Z"/>
+      </symbol>
+    </svg>
+      <header class="header">
+      <nav class="main-nav__list">
+        <li class="main-nav__item main-nav__item-first">
+          <a class="main-nav__item-wrapper" href="#">
+            <svg class="main-nav__item-logo" width="44" height="40">
+              <use xlink:href="#logo"></use>
+            </svg>
+            <div class="main-nav__title-wrapper">
+              <p class="main-nav__item-subtitle">прораб</p>
+              <p class="main-nav__item-title">Исмаил Султунов</p>
+            </div>
+          </a>
+        </li>
+        <div class="main-nav__group">
+          <div class="main-nav__social-group">
+            <li>
+              <a  class="main-nav__item main-nav__item-social" href="https://web.telegram.org/">
+                <svg class="main-nav__item-logo" width="40" height="40">
+                  <use xlink:href="img/icons/stack.svg#logo-telegram"></use>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a class="main-nav__item main-nav__item-social" href="https://web.whatsapp.com/">
+                <svg class="main-nav__item-logo" width="40" height="40">
+                  <use xlink:href="img/icons/stack.svg#logo-wa"></use>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a class="main-nav__item main-nav__item-social" href="mailto:mail@htmlacademy.ru">
+                <svg class="main-nav__item-logo" width="40" height="40">
+                  <use xlink:href="img/icons/stack.svg#logo-mail"></use>
+                </svg>
+              </a>
+            </li>
+          </div>
+          <li>
+            <a class="main-nav__item" href="tel:+7 924 719-33-63">
+              <p class="main-nav__item-phone">+7 924 719-33-63</p>
+            </a>
+          </li>
+          <li>
+            <a class="main-nav__item main-nav__item-calc">
+              <p class="main-nav__item-text">Отправить проект на рассчет</p>
+            </a>
+          </li>
+        </div>
+        <button class="main-nav__toggle" type="button">
+          <span class="visually-hidden">Открыть меню</span>
+        </button>
+      </nav>
+      <div class="header__intro">
+        <div class="header__intro-wrapper">
+          <p class="header__intro-title">Строим без посредников, напрямую от бригады, дешевле на 25% чем в компаниях</p>
+        </div>
+        <a class="header__intro-estimate">
+          <p class="header__intro-text">Получить смету на строительство</p>
+        </a>
+        <div class="header__intro-photo">
+          <picture class="header__picture" >
+            <!--source type="image/webp" media="(min-width: 1600px)" srcset="img/header-photo-desktop.webp 1x, img/header-photo-desktop@2x.webp 2x">
+            <source type="image/webp" srcset="img/header-photo-mobile.webp 1x, img/header-photo-mobile@2x.webp 2x"!-->
+            <source media="(min-width: 1600px)" srcset="img/header-photo-desktop.png 1x, img/header-photo-desktop@2x.png 2x">
+            <img class="header__photo-img" src="img/header-photo-mobile.png" srcset="img/header-photo-mobile@2x.png 2x" alt="">
+          </picture>
+          <div class="header__photo-wrapper">
+            <p class="header__photo-title">Исмаил Султунов</p>
+            <p class="header__photo-subtitle">Cтаж строительства 25 лет</p>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section class="buildings">
+      <h2 class="visually-hidden">Построенные объекты</h2>
+      <div class="buildings__header">
+        <p class="buildings__title">Я построил</p>
+        <div class="buildings__buttons">
+          <button id="button-left" class="buildings__button buildings__button-left">
+            <div id="button-arrow-left" class="button__arrow-left"></div>
+          </button>
+          <button id="button-right" class="buildings__button buildings__button--active">
+            <div id="button-arrow-right" class="button__arrow-right button__arrow-right--active"></div>
+          </button>
+        </div>
+      </div>
+      <div class="buildings__slider">
+        <div id="slider-container" class="buildings__slider-container">
+          <!--------------  card1  ----------------->
+          <div class="buildings__card">
+            <picture class="buildings__picture" >
+              <!--source type="image/webp" srcset="img/buildings-photo1-mobile.webp 1x, img/buildings-photo1-mobile@2x.webp 2x"-->
+              <img class="buildings__img" src="img/buildings-photo1-mobile.jpg" srcset="img/buildings-photo1-mobile@2x.jpg 2x" alt="Два двухэтажных дома в г. Ангарск">
+            </picture>
+            <div class="buildings__card-text">
+              <div>
+                <p class="buildings__card-title">Два двухэтажных дома в г. Ангарск</p>
+                <div class="buildings__card-wrapper">
+                  <p class="buildings__card-subtitle">Газобетон</p>
+                  <div class="buildings__card-divider"></div>
+                  <p class="buildings__card-subtitle">Кирпич</p>
+                </div>
+              </div>
+              <a class="buildings__price">
+                <p class="buildings__price-text">Узнать цену</p>
+              </a>
+            </div>
+          </div>
+          <!--------------  card2  ----------------->
+          <div class="buildings__card">
+            <picture class="buildings__picture" >
+              <!--source type="image/webp" srcset="img/buildings-photo2-mobile.webp 1x, img/buildings-photo2-mobile@2x.webp 2x"-->
+              <img class="buildings__img" src="img/buildings-photo2-mobile.jpg" srcset="img/buildings-photo2-mobile@2x.jpg 2x" alt="Одноэтажный дом">
+            </picture>
+            <div class="buildings__card-text">
+              <div>
+                <p class="buildings__card-title">Одноэтажный дом</p>
+                <div class="buildings__card-wrapper">
+                  <p class="buildings__card-subtitle">Газобетон</p>
+                  <div class="buildings__card-divider"></div>
+                  <p class="buildings__card-subtitle">Кирпич</p>
+                </div>
+              </div>
+              <a class="buildings__price">
+                <p class="buildings__price-text">Узнать цену</p>
+              </a>
+            </div>
+          </div>
+          <!--------------  card3  ----------------->
+          <div class="buildings__card">
+            <picture class="buildings__picture" >
+              <!--source type="image/webp" srcset="img/buildings-photo3-mobile.webp 1x, img/buildings-photo3-mobile@2x.webp 2x"-->
+              <img class="buildings__img" src="img/buildings-photo3-mobile.jpg" srcset="img/buildings-photo3-mobile@2x.jpg 2x" alt="Двухэтажный дом по индивидуальному проекту">
+            </picture>
+            <div class="buildings__card-text">
+              <div>
+                <p class="buildings__card-title">Двухэтажный дом по индивидуальному проекту</p>
+                <div class="buildings__card-wrapper">
+                  <p class="buildings__card-subtitle">Газобетон</p>
+                  <div class="buildings__card-divider"></div>
+                  <p class="buildings__card-subtitle">Кирпич</p>
+                </div>
+              </div>
+              <a class="buildings__price">
+                <p class="buildings__price-text">Узнать цену</p>
+              </a>
+            </div>
+          </div>
+          <!--------------  card4  ----------------->
+          <div class="buildings__card">
+            <picture class="buildings__picture" >
+              <!--source type="image/webp" srcset="img/buildings-photo4-mobile.webp 1x, img/buildings-photo4-mobile@2x.webp 2x"-->
+              <img class="buildings__img" src="img/buildings-photo4-mobile.jpg" srcset="img/buildings-photo4-mobile@2x.jpg 2x" alt="Двухэтажный барнхауз">
+            </picture>
+            <div class="buildings__card-text">
+              <div>
+                <p class="buildings__card-title">Двухэтажный барнхауз</p>
+                <div class="buildings__card-wrapper">
+                  <p class="buildings__card-subtitle">Газобетон</p>
+                  <div class="buildings__card-divider"></div>
+                  <p class="buildings__card-subtitle">Кирпич</p>
+                </div>
+              </div>
+              <a class="buildings__price">
+                <p class="buildings__price-text">Узнать цену</p>
+              </a>
+            </div>
+          </div>
+          <!--------------  card5  ----------------->
+          <div class="buildings__card">
+            <picture class="buildings__picture" >
+              <!--source type="image/webp" srcset="img/buildings-photo5-mobile.webp 1x, img/buildings-photo5-mobile@2x.webp 2x"-->
+              <img class="buildings__img" src="img/buildings-photo5-mobile.jpg" srcset="img/buildings-photo5-mobile@2x.jpg 2x" alt="Одноэтажный дом по проекту «Еловый»">
+            </picture>
+            <div class="buildings__card-text">
+              <div>
+                <p class="buildings__card-title">Одноэтажный дом по проекту «Еловый»</p>
+                <div class="buildings__card-wrapper">
+                  <p class="buildings__card-subtitle">Газобетон</p>
+                  <div class="buildings__card-divider"></div>
+                  <p class="buildings__card-subtitle">Кирпич</p>
+                </div>
+              </div>
+              <a class="buildings__price">
+                <p class="buildings__price-text">Узнать цену</p>
+              </a>
+            </div>
+          </div>
+          <!--------------  card6  ----------------->
+          <div class="buildings__card">
+            <picture class="buildings__picture" >
+              <!--source type="image/webp" srcset="img/buildings-photo6-mobile.webp 1x, img/buildings-photo6-mobile@2x.webp 2x"-->
+              <img class="buildings__img" src="img/buildings-photo6-mobile.jpg" srcset="img/buildings-photo6-mobile@2x.jpg 2x" alt="Двухэтажный дом в пос. Молодёжный">
+            </picture>
+            <div class="buildings__card-text">
+              <div>
+                <p class="buildings__card-title">Двухэтажный дом в пос. Молодёжный</p>
+                <div class="buildings__card-wrapper">
+                  <p class="buildings__card-subtitle">Газобетон</p>
+                  <div class="buildings__card-divider"></div>
+                  <p class="buildings__card-subtitle">Кирпич</p>
+                </div>
+              </div>
+              <a class="buildings__price">
+                <p class="buildings__price-text">Узнать цену</p>
+              </a>
+            </div>
+          </div>
+          <!--------------  card7  ----------------->
+          <div class="buildings__card">
+            <picture class="buildings__picture" >
+              <!--source type="image/webp" srcset="img/buildings-photo7-mobile.webp 1x, img/buildings-photo7-mobile@2x.webp 2x"-->
+              <img class="buildings__img" src="img/buildings-photo7-mobile.jpg" srcset="img/buildings-photo7-mobile@2x.jpg 2x" alt="ДДвухэтажный жилой дом в СНТ «Ручеёк»">
+            </picture>
+            <div class="buildings__card-text">
+              <div>
+                <p class="buildings__card-title">Двухэтажный жилой дом в СНТ «Ручеёк»</p>
+                <div class="buildings__card-wrapper">
+                  <p class="buildings__card-subtitle">Газобетон</p>
+                  <div class="buildings__card-divider"></div>
+                  <p class="buildings__card-subtitle">Кирпич</p>
+                </div>
+              </div>
+              <a class="buildings__price">
+                <p class="buildings__price-text">Узнать цену</p>
+              </a>
+            </div>
+          </div>
+          <!--------------  card8  ----------------->
+          <div class="buildings__card">
+            <picture class="buildings__picture" >
+              <!--source type="image/webp" srcset="img/buildings-photo8-mobile.webp 1x, img/buildings-photo8-mobile@2x.webp 2x"-->
+              <img class="buildings__img" src="img/buildings-photo8-mobile.jpg" srcset="img/buildings-photo8-mobile@2x.jpg 2x" alt="Двухэтажный дом в пос. «Изумрудный»">
+            </picture>
+            <div class="buildings__card-text">
+              <div>
+                <p class="buildings__card-title">Двухэтажный дом в пос. «Изумрудный»</p>
+                <div class="buildings__card-wrapper">
+                  <p class="buildings__card-subtitle">Газобетон</p>
+                  <div class="buildings__card-divider"></div>
+                  <p class="buildings__card-subtitle">Кирпич</p>
+                </div>
+              </div>
+              <a class="buildings__price">
+                <p class="buildings__price-text">Узнать цену</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="now">
+      <h2 class="now__title">Сейчас строю</h2>
+      <div class="now__wrapper">
+        <div class="now__card">
+          <picture class="buildings__picture" >
+            <!--source type="image/webp" media="(min-width: 1600px)" srcset="img/now-photo1-desktop.webp 1x, img/now-photo1-desktop@2x.webp 2x">
+            <source type="image/webp" srcset="img/now-photo1-mobile.webp 1x, img/now-photo1-mobile@2x.webp 2x"-->
+            <source media="(min-width: 1600px)" srcset="img/now-photo1-desktop.jpg 1x, img/now-photo1-desktop@2x.jpg 2x">
+            <img class="buildings__img now__img" src="img/now-photo1-mobile.jpg" srcset="img/now-photo1-mobile@2x.jpg 2x" alt="Двухэтажный дом по индивидуальному проекту">
+          </picture>
+          <div class="now__card-text">
+            <p class="buildings__card-title now__card-title">Двухэтажный дом по индивидуальному проекту</p>
+            <ul class="now__list">
+              <li class="now__item">
+                <div class="buildings__card-divider now__card-divider"></div>
+                <p class="buildings__card-subtitle now__card-subtitle">26 км Байкальского тракта, г. Иркутск</p>
+              </li>
+              <li class="now__item">
+                <div class="buildings__card-divider now__card-divider"></div>
+                <p class="buildings__card-subtitle">266 м2</p>
+              </li>
+              <li class="now__item">
+                <div class="buildings__card-divider now__card-divider"></div>
+                <p class="buildings__card-subtitle">Газобетон / кирпич</p>
+              </li>
+            </ul>
+            <a class="now__price">
+              <p class="now__price-text">Посетить площадку</p>
+            </a>
+          </div>
+        </div>
+        <div class="now__card">
+          <picture class="buildings__picture" >
+            <!--source type="image/webp" media="(min-width: 1600px)" srcset="img/now-photo2-desktop.webp 1x, img/now-photo2-desktop@2x.webp 2x">
+            <source type="image/webp" srcset="img/now-photo2-mobile.webp 1x, img/now-photo2-mobile@2x.webp 2x"-->
+            <source media="(min-width: 1600px)" srcset="img/now-photo2-desktop.jpg 1x, img/now-photo2-desktop@2x.jpg 2x">
+            <img class="buildings__img now__img" src="img/now-photo2-mobile.jpg" srcset="img/now-photo2-mobile@2x.jpg 2x" alt="Двухэтажный дом с гаражом">
+          </picture>
+          <div class="now__card-text">
+            <p class="buildings__card-title now__card-title">Двухэтажный дом с гаражом</p>
+            <ul class="now__list">
+              <li class="now__item">
+                <div class="buildings__card-divider now__card-divider"></div>
+                <p class="buildings__card-subtitle">пос. Молодёжное</p>
+              </li>
+              <li class="now__item">
+                <div class="buildings__card-divider now__card-divider"></div>
+                <p class="buildings__card-subtitle">267 м2</p>
+              </li>
+              <li class="now__item">
+                <div class="buildings__card-divider now__card-divider"></div>
+                <p class="buildings__card-subtitle">Газобетон / кирпич</p>
+              </li>
+            </ul>
+            <a class="now__price">
+              <p class="now__price-text">Посетить площадку</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="price">
+      <h2 class="price__title">Узнайте стоимость и сроки строительства<br class="price__br"> вашего дома</h2>
+      <p class="price__subtitle">Узнайте стоимость строительства вашего дома,<br class="price__br"> получите коммерческое на WhatsApp</p>
+      <div class="price__calc-container">
+        <!-- -------------- square ----------------- -->
+        <div class="price__calc price__calc--active">
+          <div class="price__calc-wrapper">
+            <p class="price__calc-square">Площадь жилых помещений (без учёта гаража)</p>
+            <form class="price__square-form">
+              <div class="price__square-fields">
+                <div class="price__field">
+                  <input class="price__checkbox visually-hidden" id="square-checkbox1" type="radio" name="price-checkbox" required>
+                  <label class="price__checkbox-label" for="square-checkbox1" tabindex="0">75 м2</label>
+                </div>
+                <div class="price__field">
+                  <input class="price__checkbox visually-hidden" id="square-checkbox2" type="radio" name="price-checkbox">
+                  <label class="price__checkbox-label" for="square-checkbox2" tabindex="0">100 м2</label>
+                </div>
+                <div class="price__field">
+                  <input class="price__checkbox visually-hidden" id="square-checkbox3" type="radio" name="price-checkbox">
+                  <label class="price__checkbox-label" for="square-checkbox3" tabindex="0">125 м2</label>
+                </div>
+                <div class="price__field">
+                  <input class="price__checkbox visually-hidden" id="square-checkbox4" type="radio" name="price-checkbox">
+                  <label class="price__checkbox-label" for="square-checkbox4" tabindex="0">150 м2</label>
+                </div>
+                <div class="price__field">
+                  <input class="price__checkbox visually-hidden" id="square-checkbox5" type="radio" name="price-checkbox">
+                  <label class="price__checkbox-label" for="square-checkbox5" tabindex="0">175 м2</label>
+                </div>
+                <div class="price__field">
+                  <input class="price__checkbox visually-hidden" id="square-checkbox6" type="radio" name="price-checkbox">
+                  <label class="price__checkbox-label" for="square-checkbox6" tabindex="0">200 м2</label>
+                </div>
+                <div class="price__field">
+                  <input class="price__checkbox visually-hidden" id="square-checkbox7" type="radio" name="price-checkbox">
+                  <label class="price__checkbox-label" for="square-checkbox7" tabindex="0">250 м2</label>
+                </div>
+              </div>
+              <div class="price__buttons">
+                <a class="price__button price__button-prev" id="button-square-prev">НАЗАД</a>
+                <a class="price__button price__button-next" id="button-square-next">ДАЛЕЕ</a>
+              </div>
+              <p class="price__progress">Прогресс: 0%</p>
+              <div class="price__progress-bar"></div>
+            </form>
+          </div>
+        </div>
+        <!-- -------------- garage ----------------- -->
+        <div class="price__calc-garage">
+          <div class="price__calc-wrapper">
+            <p class="price__calc-square">Пристроенный гараж</p>
+            <form class="price__square-form">
+              <div class="price__garage-fields">
+                <div class="price__field price__field--garage1">
+                  <input class="price__checkbox visually-hidden" id="garage-checkbox1" type="radio" name="garage-checkbox" required>
+                  <label class="price__checkbox-label price__checkbox-label--steps" for="garage-checkbox1" tabindex="0">На 1 авто (+25 м2 к площади)</label>
+                </div>
+                <div class="price__field price__field--garage2">
+                  <input class="price__checkbox visually-hidden" id="garage-checkbox2" type="radio" name="garage-checkbox">
+                  <label class="price__checkbox-label price__checkbox-label--steps" for="garage-checkbox2" tabindex="0">На 2 авто (+45 м2 к площади)</label>
+                </div>
+                <div class="price__field price__field--garage0">
+                  <input class="price__checkbox visually-hidden" id="garage-checkbox3" type="radio" name="garage-checkbox">
+                  <label class="price__checkbox-label price__checkbox-label--steps" for="garage-checkbox3" tabindex="0">Без гаража</label>
+                </div>
+              </div>
+              <div class="price__buttons">
+                <a class="price__button garage__button-prev" id="button-garage-prev">НАЗАД</a>
+                <a class="price__button price__button-next" id="button-garage-next">ДАЛЕЕ</a>
+              </div>
+              <p class="price__progress">Прогресс: 20%</p>
+              <div class="price__progress-bar price__progress-bar--20"></div>
+            </form>
+          </div>
+        </div>
+        <!-- -------------- flors ----------------- -->
+        <div class="price__calc-flors">
+          <div class="price__calc-wrapper">
+            <p class="price__calc-square">Сколько этажей</p>
+            <form class="price__square-form">
+              <div class="price__flors-fields">
+                <div class="price__field price__field--flors1">
+                  <input class="price__checkbox visually-hidden" id="flors-checkbox1" type="radio" name="flors-checkbox" required>
+                  <label class="price__checkbox-label price__checkbox-label--steps" for="flors-checkbox1" tabindex="0">1 этаж</label>
+                </div>
+                <div class="price__field price__field--flors2">
+                  <input class="price__checkbox visually-hidden" id="flors-checkbox2" type="radio" name="flors-checkbox">
+                  <label class="price__checkbox-label price__checkbox-label--steps" for="flors-checkbox2" tabindex="0">2 этажа</label>
+                </div>
+              </div>
+              <div class="price__buttons">
+                <a class="price__button garage__button-prev" id="button-flors-prev">НАЗАД</a>
+                <a class="price__button price__button-next" id="button-flors-next">ДАЛЕЕ</a>
+              </div>
+              <p class="price__progress">Прогресс: 40%</p>
+              <div class="price__progress-bar price__progress-bar--40"></div>
+            </form>
+          </div>
+        </div>
+        <!-- -------------- walls ----------------- -->
+        <div class="price__calc-walls">
+          <div class="price__calc-wrapper">
+            <p class="price__calc-square">Материал стен</p>
+            <form class="price__square-form">
+              <div class="price__walls-fields">
+                <div class="price__field price__field--walls1">
+                  <input class="price__checkbox visually-hidden" id="walls-checkbox1" type="radio" name="walls-checkbox" required>
+                  <label class="price__checkbox-label price__checkbox-label--steps" for="walls-checkbox1" tabindex="0">Газобетон</label>
+                </div>
+                <div class="price__field price__field--walls2">
+                  <input class="price__checkbox visually-hidden" id="walls-checkbox2" type="radio" name="walls-checkbox">
+                  <label class="price__checkbox-label price__checkbox-label--steps" for="walls-checkbox2" tabindex="0">Кирпич</label>
+                </div>
+                <div class="price__field price__field--walls3">
+                  <input class="price__checkbox visually-hidden" id="walls-checkbox3" type="radio" name="walls-checkbox">
+                  <label class="price__checkbox-label price__checkbox-label--steps" for="walls-checkbox3" tabindex="0">Клеёный брус</label>
+                </div>
+              </div>
+              <div class="price__buttons">
+                <a class="price__button garage__button-prev" id="button-walls-prev">НАЗАД</a>
+                <a class="price__button price__button-next" id="button-walls-next">ДАЛЕЕ</a>
+              </div>
+              <p class="price__progress">Прогресс: 60%</p>
+              <div class="price__progress-bar price__progress-bar--60"></div>
+            </form>
+          </div>
+        </div>
+        <!-- -------------- roof ----------------- -->
+        <div class="price__calc-roof">
+          <div class="price__calc-wrapper">
+            <p class="price__calc-square">Кровля</p>
+            <form class="price__square-form">
+              <div class="price__roof-fields">
+                <div class="price__field price__field--roof1">
+                  <input class="price__checkbox visually-hidden" id="roof-checkbox1" type="radio" name="roof-checkbox" required>
+                  <label class="price__checkbox-label price__checkbox-label--steps" for="roof-checkbox1" tabindex="0">Плоская</label>
+                </div>
+                <div class="price__field price__field--roof2">
+                  <input class="price__checkbox visually-hidden" id="roof-checkbox2" type="radio" name="roof-checkbox">
+                  <label class="price__checkbox-label price__checkbox-label--steps" for="roof-checkbox2" tabindex="0">Металлочерепица</label>
+                </div>
+                <div class="price__field price__field--roof3">
+                  <input class="price__checkbox visually-hidden" id="roof-checkbox3" type="radio" name="roof-checkbox">
+                  <label class="price__checkbox-label price__checkbox-label--steps" for="roof-checkbox3" tabindex="0">Гибкая черепица</label>
+                </div>
+              </div>
+              <div class="price__buttons">
+                <a class="price__button garage__button-prev" id="button-roof-prev">НАЗАД</a>
+                <a class="price__button price__button-next" id="button-roof-next">ДАЛЕЕ</a>
+              </div>
+              <p class="price__progress">Прогресс: 80%</p>
+              <div class="price__progress-bar price__progress-bar--80"></div>
+            </form>
+          </div>
+        </div>
+        <!-- -------------- front ----------------- -->
+        <div class="price__calc-front">
+          <div class="price__calc-wrapper">
+            <p class="price__calc-square">Фасад</p>
+            <form class="price__square-form">
+              <div class="price__front-fields">
+                <div class="price__field price__field--front1">
+                  <input class="price__checkbox visually-hidden" id="front-checkbox1" type="radio" name="front-checkbox" required>
+                  <label class="price__checkbox-label price__checkbox-label--steps" for="front-checkbox1" tabindex="0">Штукатурка по утеплителю</label>
+                </div>
+                <div class="price__field price__field--front2">
+                  <input class="price__checkbox visually-hidden" id="front-checkbox2" type="radio" name="front-checkbox">
+                  <label class="price__checkbox-label price__checkbox-label--steps" for="front-checkbox2" tabindex="0">Подмосковный кирпич</label>
+                </div>
+                <div class="price__field price__field--front3">
+                  <input class="price__checkbox visually-hidden" id="front-checkbox3" type="radio" name="front-checkbox">
+                  <label class="price__checkbox-label price__checkbox-label--steps" for="front-checkbox3" tabindex="0">Комбинированный</label>
+                </div>
+                <div class="price__field price__field--front4">
+                  <input class="price__checkbox visually-hidden" id="front-checkbox4" type="radio" name="front-checkbox">
+                  <label class="price__checkbox-label price__checkbox-label--steps" for="front-checkbox4" tabindex="0">Без фасада</label>
+                </div>
+              </div>
+              <div class="price__buttons">
+                <a class="price__button garage__button-prev" id="button-front-prev">НАЗАД</a>
+                <a class="price__button price__button-next" id="button-front-next">ДАЛЕЕ</a>
+              </div>
+              <p class="price__progress">Прогресс: 87%</p>
+              <div class="price__progress-bar price__progress-bar--87"></div>
+            </form>
+          </div>
+        </div>
+        <!-- -------------- contacts ----------------- -->
+        <div class="price__calc-contacts">
+          <div class="price__calc-wrapper price__calc-wrapper--contacts">
+            <p class="price__calc-square price__calc-title">Получите коммерческое предложение на WhatsApp в течение 2-х минут!</p>
+            <p class="price__calc-subtitle">Полное коммерческое предложение со всеми комплектациями и ценами у вас в телефоне в течение 2-х минут!</p>
+            <form class="price__square-form contacts-form">
+              <div class="price__contacts-fields">
+                <div class="contacts__field-input">
+                  <label class="contacts__input-label" for="contacts-name" tabindex="0">Ваше имя*</label>
+                  <input class="contacts__input" id="contacts-name" type="text" name="contacts-name" placeholder="Как вас зовут" required>
+                </div>
+                <div class="contacts__field-input">
+                  <label class="contacts__input-label" for="contacts-phone" tabindex="0">Ваш номер телефона*</label>
+                  <input class="contacts__input" id="contacts-phone" type="text" name="contacts-phone" placeholder="Номер телефона"  required pattern="\+[0-9]{11,13}">
+                </div>
+              </div>
+              <a class="contacts__button" id="button-contacts">Получить коммерческое предложение</a>
+              <div class="contacts__field-checkbox">
+                <input class="contacts__checkbox visually-hidden" id="contacts-checkbox" type="checkbox" name="contacts-checkbox"  required>
+                <label class="contacts__checkbox-label" for="contacts-checkbox" tabindex="0">Даю согласие на Обработку персональных данных</label>
+              </div>
+            </form>
+          </div>
+          <div class="price__side-contacts"></div>
+        </div>
+        <!-- -------------- confirm ----------------- -->
+        <div class="price__calc-confirm">
+          <div class="price__calc-wrapper price__calc-wrapper--confirm">
+            <svg class="confirm__icon" width="60" height="60">
+              <use xlink:href="img/icons/stack.svg#success-icon"></use>
+            </svg>
+            <p class="price__calc-square price__confirm-title">Успешно отправлено!</p>
+            <p class="price__calc-subtitle">Не убирайте телефон далеко — через 2 минуты вы получите расчёт на дом своей мечты.</p>
+            <form class="price__square-form confirm-form">
+              <div class="price__confirm-fields"></div>
+              <a class="confirm__button" id="button-confirm">Закрыть</a>
+            </form>
+          </div>
+          <div class="price__side-contacts"></div>
+        </div>
+        <div class="price__side">
+          <picture class="price__picture" >
+            <!--source type="image/webp" srcset="img/price-photo.webp 1x, img/price-photo@2x.webp 2x"!-->
+            <img class="price__photo-img" src="img/price-photo.png" srcset="img/price-photo@2x.png 2x" alt="">
+          </picture>
+          <div class="price__side-wrapper">
+            <p class="price__side-title">Исмаил Султунов</p>
+            <p class="price__side-subtitle">Cтаж строительства<br> 25 лет</p>
+          </div>
+          <p class="price__side-quote">Мне нужно понять какой<br>дом вы хотите, чтобы выслать<br>вам смету и каталог подходящих<br>домов.</p>
+          <ul class="price__side-list">
+            <p class="price__list-title">Вы получите:</p>
+            <li class="price__side-item">
+              <div class="price__side-container">
+                <div class="price__side-icon price__side-icon--calc"></div>
+                <p class="price__side-text">Смету на строительство дома</p>
+              </div>
+            </li>
+            <li class="price__side-item">
+              <div class="price__side-container">
+                <div class="price__side-icon price__side-icon--object"></div>
+                <p class="price__side-text">Выезд на площадку строящегося<br> дома на экскурсию</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="footer__div"></div>
+      <li class="main-nav__item main-nav__item-first">
+        <a class="main-nav__item-wrapper" href="#">
+          <svg class="main-nav__item-logo" width="44" height="40">
+            <use xlink:href="#logo"></use>
+          </svg>
+          <div class="main-nav__title-wrapper">
+            <p class="main-nav__item-subtitle">прораб</p>
+            <p class="main-nav__item-title">Исмаил Султунов</p>
+          </div>
+        </a>
+      </li>
+      <div class="main-nav__social-group footer__social-group">
+        <li>
+          <a  class="main-nav__item main-nav__item-social" href="https://web.telegram.org/">
+            <svg class="main-nav__item-logo" width="40" height="40">
+              <use xlink:href="img/icons/stack.svg#logo-telegram"></use>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a class="main-nav__item main-nav__item-social" href="https://web.whatsapp.com/">
+            <svg class="main-nav__item-logo" width="40" height="40">
+              <use xlink:href="img/icons/stack.svg#logo-wa"></use>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a class="main-nav__item main-nav__item-social" href="mailto:mail@htmlacademy.ru">
+            <svg class="main-nav__item-logo" width="40" height="40">
+              <use xlink:href="img/icons/stack.svg#logo-mail"></use>
+            </svg>
+          </a>
+        </li>
+      </div>
+      <list class="footer__list">
+        <li class="footer__item">
+          <div class="footer__icon footer__icon--pigg"></div>
+          <p class="footer__item-title">Строительство дешевле на 25%</p>
+          <p class="footer__item-subtitle">Мне не нужно содержать офис и большой штат.</p>
+        </li>
+        <li class="footer__item">
+          <div class="footer__icon footer__icon--house"></div>
+          <p class="footer__item-title">Опыт более 100 построенных домов</p>
+          <p class="footer__item-subtitle">По всей России, от небольших дачных жилых домов до огромных коттеджей.</p>
+        </li>
+        <li class="footer__item">
+          <div class="footer__icon footer__icon--chat"></div>
+          <p class="footer__item-title">Все клиенты рекомендуют меня</p>
+          <p class="footer__item-subtitle">Забочусь о репутации, поэтому настолько хорошо делаю свою работу.</p>
+        </li>
+        <li class="footer__item footer__item--phone">
+          <a class="main-nav__item" href="tel:+7 924 719-33-63">
+            <p class="main-nav__item-phone">+7 924 719-33-63</p>
+          </a>
+        </li>
+        <li class="footer__item footer__item--button">
+          <a class="main-nav__item main-nav__item-calc">
+            <p class="main-nav__item-text">Отправить проект на рассчет</p>
+          </a>
+        </li>
+      </list>
+    </footer>
+    <script src="js/script.js" defer></script>
   </body>
 </html>

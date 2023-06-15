@@ -1,0 +1,129 @@
+.now__title {
+  margin: 0;
+  margin-top: 80px;
+  margin-left: 4px;
+  font-family: 'Mont';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 36px;
+  color: $main-text;
+
+  @media (min-width: $desktop-width) {
+    margin-top: 100px;
+    margin-left: 150px;
+    font-size: 40px;
+    line-height: 51px;
+  }
+}
+
+.now__wrapper {
+  display: grid;
+  margin-top: 34px;
+
+  @media (min-width: $desktop-width) {
+    display: flex;
+    margin-top: 40px;
+    margin-left: 150px;
+  }
+}
+
+.now__card {
+  margin-bottom: 32px;
+  justify-self: center;
+
+  @media (min-width: $desktop-width) {
+    display: grid;
+    grid-template-columns: 366px 260px;
+    gap: 16px;
+    margin-bottom: 0;
+    margin-right: 16px;
+  }
+}
+
+.now__img {
+  margin-left: 4px;
+
+  @media (min-width: $desktop-width) {
+    width: 366px;
+    height: 380px;
+    object-fit: cover;
+  }
+}
+
+.now__card-text {
+
+  @media (min-width: $desktop-width) {
+    display: grid;
+    grid-template-rows: max-content 1fr min-content;
+    max-width: 260px;
+  }
+}
+
+.now__card-title {
+  width: 366px;
+
+  @media (min-width: $desktop-width) {
+    width: 260px;
+    margin-top: 0;
+    margin-left: 8px;
+    margin-bottom: 30px;
+  }
+}
+
+.now__list {
+  margin: 0;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  padding: 0;
+  list-style: none;
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 0;
+  }
+}
+
+.now__item {
+  display: flex;
+  align-items: start;
+  margin-bottom: 12px;
+}
+
+.now__card-divider {
+
+  @media (min-width: $desktop-width) {
+    margin-top: 8px;
+  }
+}
+
+.now__card-subtitle {
+
+  @media (min-width: $desktop-width) {
+    max-width: 228px;
+  }
+}
+
+.now__price {
+  display: flex;
+  width: 366px;
+  height: 56px;
+  margin-left: 4px;
+  justify-content: center;
+  align-items: center;
+  background-color: $primary;
+
+  @media (min-width: $desktop-width) {
+    width: 247px;
+  }
+}
+
+.now__price-text {
+  font-family: 'Mont';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}

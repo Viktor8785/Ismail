@@ -1,0 +1,827 @@
+.price {
+  margin-top: 60px;
+  background-color: $main-bg;
+
+  @media (min-width: $desktop-width) {
+    margin-top: 100px;
+  }
+}
+
+.price__title {
+  margin: 0;
+  padding-top: 30px;
+  margin-left: 12px;
+  margin-right: 12px;
+  font-family: 'Mont';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 36px;
+  display: flex;
+  align-items: center;
+  color: $main-text;
+
+  @media (min-width: $desktop-width) {
+    padding-top: 60px;
+    margin-left: 150px;
+    margin-right: 150px;
+    font-size: 40px;
+    line-height: 51px;
+  }
+}
+
+.price__br {
+  display: none;
+
+  @media (min-width: $desktop-width) {
+    display: block;
+  }
+}
+
+.price__subtitle {
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-bottom: 30px;
+  font-family: 'Mont';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  color: #8A8A8A;
+
+  @media (min-width: $desktop-width) {
+    margin-left: 150px;
+    margin-right: 150px;
+    margin-bottom: 40px;
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+
+.price__calc-container {
+
+  @media (min-width: $desktop-width) {
+    display: grid;
+    grid-template-columns: 1006px 416px;
+    gap: 24px;
+  }
+}
+
+.price__calc {
+  display: none;
+  width: calc(100% - 24px);
+  height: 600px;
+  margin-left: 12px;
+  background-color: #FFFFFF;
+  &--active {
+    display: block;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 856px;
+    margin-left: 150px;
+  }
+}
+
+.price__calc-wrapper {
+  margin-left: 12px;
+  margin-right: 12px;
+
+  @media (min-width: $desktop-width) {
+    margin-left: 40px;
+    margin-right: 40px;
+    &--contacts,
+    &--confirm {
+      width: 364px;
+      height: 520px;
+      margin-right: 48px;
+    }
+  }
+}
+
+.price__calc-square {
+  padding-top: 15px;
+  font-family: 'Mont';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 26px;
+  display: flex;
+  align-items: center;
+  color: $main-text;
+
+  @media (min-width: $desktop-width) {
+    font-size: 24px;
+    line-height: 30px;
+  }
+}
+
+.price__square-form {
+  display: grid;
+  grid-template-rows: 390px min-content min-content min-content;
+  height: 390px;
+  &:invalid .price__button-next {
+    opacity: 0.5;
+    cursor: default;
+  }
+
+  @media (min-width: $desktop-width) {
+    grid-template-rows: 380px min-content min-content min-content;
+  }
+}
+
+.price__square-fields {
+  display: grid;
+  height: 260px;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+
+  @media (min-width: $desktop-width) {
+    height: 136px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 24px;
+  }
+}
+
+.price__field {
+  max-height: 56px;
+  background-color: $main-bg;
+
+  @media (min-width: $desktop-width) {
+    &--garage1,
+    &--garage2,
+    &--garage0,
+    &--flors1,
+    &--flors2,
+    &--walls1,
+    &--walls2,
+    &--walls3,
+    &--roof1,
+    &--roof2,
+    &--roof3,
+    &--front1,
+    &--front2,
+    &--front3,
+    &--front4  {
+      width: 176px;
+      height: 176px;
+      max-height: 176px;
+      background-color: #FFFFFF;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+    &--garage1 {
+      background-image: url('../../img/price-garage1.jpg');
+    }
+    &--garage2 {
+      background-image: url('../../img/price-garage2.jpg');
+    }
+    &--garage0 {
+      background-image: url('../../img/price-garage0.jpg');
+    }
+    &--flors1 {
+      background-image: url('../../img/price-flors1.jpg');
+    }
+    &--flors2 {
+      background-image: url('../../img/price-flors2.jpg');
+    }
+    &--walls1 {
+      background-image: url('../../img/price-walls1.jpg');
+    }
+    &--walls2 {
+      background-image: url('../../img/price-walls2.jpg');
+    }
+    &--walls3 {
+      background-image: url('../../img/price-walls3.jpg');
+    }
+    &--roof1 {
+      background-image: url('../../img/price-roof1.jpg');
+    }
+    &--roof2 {
+      background-image: url('../../img/price-roof2.jpg');
+    }
+    &--roof3 {
+      background-image: url('../../img/price-roof3.jpg');
+    }
+    &--front1 {
+      background-image: url('../../img/price-front1.jpg');
+    }
+    &--front2 {
+      background-image: url('../../img/price-front2.jpg');
+    }
+    &--front3 {
+      background-image: url('../../img/price-front3.jpg');
+    }
+    &--front4 {
+      background-image: url('../../img/price-front4.jpg');
+    }
+  }
+}
+
+.price__checkbox-label {
+  position: relative;
+  display: block;
+  padding-left: 56px;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  font-family: 'Mont';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  color: $main-text;
+  cursor: pointer;
+  user-select: none;
+  &::before {
+    position: absolute;
+    content: "";
+    left: 12px;
+    top: 11px;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    user-select: none;
+    background-color: #FFFFFF;
+  }
+
+  @media (min-width: $desktop-width) {
+    &--steps {
+      padding-left: 0;
+      padding-top: 190px;
+      padding-bottom: 0;
+    }
+  }
+}
+
+.price__checkbox:checked + label::before {
+  background-color: $primary;
+  background-image: url(../../img/check.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.price__checkbox:checked + label {
+  border: 2px solid $primary;
+}
+
+.price__buttons {
+  display: flex;
+  justify-content:space-between;
+  font-family: 'Mont';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.price__button {
+  display: flex;
+  width: 128px;
+  height: 56px;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+}
+
+.price__button-prev {
+  border: 1px solid #B9C1C9;
+  color: $main-text;
+  opacity: 0.5;
+  cursor: default;
+}
+
+.price__button-next {
+  background-color: $primary;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+.price__progress {
+  margin: 0;
+  margin-top: 20px;
+  margin-bottom: 5px;
+  font-family: 'Mont';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+  color: #8A8A8A;
+  text-align: center;
+}
+
+.price__progress-bar {
+  position: relative;
+  width: 100%;
+  height: 12px;
+  background-color: $main-bg;
+  justify-self: center;
+  &::after {
+    position: absolute;
+    height: 12px;
+    background-color: #23252D;
+  }
+  &--20 {
+    &::after {
+      content: "";
+      width: 20%;
+    }
+  }
+  &--40 {
+    &::after {
+      content: "";
+      width: 40%;
+    }
+  }
+  &--60 {
+    &::after {
+      content: "";
+      width: 60%;
+    }
+  }
+  &--80 {
+    &::after {
+      content: "";
+      width: 80%;
+    }
+  }
+  &--87 {
+    &::after {
+      content: "";
+      width: 87%;
+    }
+  }
+}
+
+.price__calc-garage {
+  display: none;
+  width: calc(100% - 24px);
+  height: 600px;
+  margin-left: 12px;
+  background-color: #FFFFFF;
+  &--active {
+    display: block;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 856px;
+    margin-left: 150px;
+  }
+}
+
+.price__garage-fields {
+  display: grid;
+  height: 204px;
+
+  @media (min-width: $desktop-width) {
+    height: 231px;
+    grid-template-columns: 176px 176px 176px;
+    gap: 24px;
+  }
+}
+
+.garage__button-prev {
+  border: 1px solid #B9C1C9;
+  color: $main-text;
+  cursor: pointer;
+}
+
+.price__calc-flors {
+  display: none;
+  width: calc(100% - 24px);
+  height: 600px;
+  margin-left: 12px;
+  background-color: #FFFFFF;
+  &--active {
+    display: block;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 856px;
+    margin-left: 150px;
+  }
+}
+
+.price__flors-fields {
+  display: grid;
+  height: 136px;
+
+  @media (min-width: $desktop-width) {
+    height: 231px;
+    grid-template-columns: 176px 176px;
+    gap: 24px;
+  }
+}
+
+.price__calc-walls {
+  display: none;
+  width: calc(100% - 24px);
+  height: 600px;
+  margin-left: 12px;
+  background-color: #FFFFFF;
+  &--active {
+    display: block;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 856px;
+    margin-left: 150px;
+  }
+}
+
+.price__walls-fields {
+  display: grid;
+  height: 204px;
+
+  @media (min-width: $desktop-width) {
+    height: 231px;
+    grid-template-columns: 176px 176px 176px;
+    gap: 24px;
+  }
+}
+
+.price__calc-roof {
+  display: none;
+  width: calc(100% - 24px);
+  height: 600px;
+  margin-left: 12px;
+  background-color: #FFFFFF;
+  &--active {
+    display: block;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 856px;
+    margin-left: 150px;
+  }
+}
+
+.price__roof-fields {
+  display: grid;
+  height: 204px;
+
+  @media (min-width: $desktop-width) {
+    height: 231px;
+    grid-template-columns: 176px 176px 176px;
+    gap: 24px;
+  }
+}
+
+.price__calc-front {
+  display: none;
+  width: calc(100% - 24px);
+  height: 600px;
+  margin-left: 12px;
+  background-color: #FFFFFF;
+  &--active {
+    display: block;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 856px;
+    margin-left: 150px;
+  }
+}
+
+.price__front-fields {
+  display: grid;
+  height: 272px;
+
+  @media (min-width: $desktop-width) {
+    height: 231px;
+    grid-template-columns: 176px 176px 176px 176px;
+    gap: 24px;
+  }
+}
+
+.price__calc-contacts {
+  display: none;
+  width: calc(100% - 24px);
+  height: 600px;
+  margin-left: 12px;
+  background-color: #FFFFFF;
+  &--active {
+    display: block;
+  }
+
+  @media (min-width: $desktop-width) {
+    &--active {
+      display: flex;
+    }
+    width: 856px;
+    margin-left: 150px;
+  }
+}
+
+.price__calc-title {
+  margin-bottom: 10px;
+}
+
+.price__calc-subtitle {
+  margin: 0;
+  font-family: 'Mont';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  color: #8A8A8A;
+}
+
+.price__contacts-fields {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 40px;
+  height: 166px;
+  margin-top: 40px;
+}
+
+.contacts__input-label {
+  display: block;
+  font-family: 'Mont';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  color: #B9C1C9;
+}
+
+.contacts__input {
+  display: block;
+  width: calc(100% - 4px);
+  height: 50px;
+  font-family: 'Mont';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  color: $main-text;
+  border: none;
+  border-bottom: 1px solid #D2D7DC;
+  outline-style: none;
+  &::placeholder {
+    font-family: 'Mont';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    color: $main-text;
+  }
+}
+
+.contacts__button {
+  display: flex;
+  width: 326px;
+  height: 56px;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Mont';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  background-color: $primary;
+  cursor: pointer;
+
+  @media (min-width: $desktop-width) {
+    width: 364px;
+  }
+}
+
+.contacts-form {
+  grid-template-rows: 325px min-content min-content;
+  &:invalid .contacts__button {
+    opacity: 0.5;
+    cursor: default;
+  }
+
+  @media (min-width: $desktop-width) {
+    grid-template-rows: 259px min-content min-content;
+  }
+}
+
+.contacts__checkbox-label {
+  position: relative;
+  display: block;
+  padding-left: 30px;
+  padding-top: 10px;
+  padding-bottom: 18px;
+  font-family: 'Mont';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  color: #8A8A8A;
+  cursor: pointer;
+  user-select: none;
+  &::before {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 14px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    user-select: none;
+    background-color: #FFFFFF;
+    border: 1px solid #78BE21;
+  }
+}
+
+.contacts__checkbox:checked + label::before {
+  background-color: $primary;
+  background-image: url(../../img/check-contacts.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.price__calc-confirm {
+  display: none;
+  width: calc(100% - 24px);
+  height: 600px;
+  margin-left: 12px;
+  background-color: #FFFFFF;
+  &--active {
+    display: block;
+  }
+
+  @media (min-width: $desktop-width) {
+    &--active {
+      display: flex;
+    }
+    width: 856px;
+    margin-left: 150px;
+  }
+}
+
+.confirm__icon {
+  margin-top: 12px;
+}
+
+.price__confirm-title {
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+.confirm-form {
+  grid-template-rows: 1fr min-content;
+
+  @media (min-width: $desktop-width) {
+    grid-template-rows: 306px min-content;
+  }
+}
+
+.confirm__button {
+  display: flex;
+  width: 326px;
+  height: 56px;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Mont';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: $main-text;
+  border: 1px solid #B9C1C9;
+  cursor: pointer;
+}
+
+.price__side {
+  position: relative;
+  display: none;
+  width: 416px;
+  height: 600px;
+  min-height: 600px;
+  background-color: #FFFFFF;
+
+  @media (min-width: $desktop-width) {
+    display: grid;
+  }
+}
+
+.price__picture {
+  position: absolute;
+  top: -50px;
+  left: 25px;
+}
+
+.price__side-wrapper {
+  margin-right: 24px;
+  justify-self: end;
+}
+
+.price__side-title {
+  margin: 0;
+  margin-top: 40px;
+  font-family: 'Mont';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 26px;
+  text-align: right;
+  color: $main-text;
+}
+
+.price__side-subtitle {
+  margin: 0;
+  font-family: 'Mont';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  color: #8A8A8A;
+}
+
+.price__side-quote {
+  display: flex;
+  width: 344px;
+  height: 128px;
+  margin-top: 26px;
+  margin-left: 24px;
+  padding-left: 24px;
+  justify-content: start;
+  align-items: center;
+  font-family: 'Mont';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  color: $main-text;
+  background-color: $main-bg;
+}
+
+.price__side-list {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 5px;
+  list-style: none;
+  align-self: flex-end;
+}
+
+.price__list-title {
+  margin: 0;
+  margin-left: 24px;
+  margin-bottom: 10px;
+  font-family: 'Mont';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 23px;
+  text-transform: uppercase;
+  color: $main-text;
+}
+
+.price__side-container {
+  display: flex;
+  margin-left: 24px;
+  align-items: center;
+}
+
+.price__side-icon {
+  display: block;
+  width: 40px;
+  height: 40px;
+  background-color: $primary;
+  background-repeat: no-repeat;
+  background-position: center;
+  &--calc {
+    background-image: url(../../img/price-icon-calc.svg);
+  }
+  &--object {
+    background-image: url(../../img/price-icon-object.svg);
+  }
+}
+
+.price__side-text {
+  margin-left: 24px;
+  font-family: 'Mont';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  color: $main-text;
+}
+
+.price__side-contacts {
+  display: none;
+  width: 364px;
+  height: 600px;
+  min-height: 600px;
+  background-color: #FFFFFF;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  @media (min-width: $desktop-width) {
+    display: block;
+    background-image: url(../../img/price-chat-photo.jpg);
+  }
+}
