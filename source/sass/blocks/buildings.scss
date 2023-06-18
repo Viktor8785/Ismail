@@ -48,7 +48,7 @@
   width: 40px;
   height: 40px;
   border: 1px solid #B9C1C9;
-  background-color: #ffffff;
+  background-color: #FFFFFF;
 
   @media (min-width: $desktop-width) {
     width: 52px;
@@ -58,8 +58,8 @@
     & .button__arrow-left,
     & .button__arrow-right {
       &--active {
-        border-bottom: 2px solid #ffffff;
-        border-right: 2px solid #ffffff;
+        border-bottom: 2px solid #FFFFFF;
+        border-right: 2px solid #FFFFFF;
       }
 
       @media (hover: none) and (pointer: coarse) {
@@ -75,8 +75,12 @@
   cursor: pointer;
 
   @media (hover: none) and (pointer: coarse) {
-    background-color: #ffffff;
+    background-color: #FFFFFF;
   }
+}
+
+.buildings__button:active.buildings__button--active{
+  opacity: 0.2;
 }
 
 .buildings__button-left {
@@ -186,6 +190,24 @@
   justify-content: center;
   align-items: center;
   border: 1px solid #B9C1C9;
+  cursor: pointer;
+  &:hover {
+    background-color: #000000;
+    & .buildings__price-text {
+      color: #FFFFFF;
+    }
+
+    @media (hover: none) and (pointer: coarse) {
+      background-color: #FFFFFF;
+      & .buildings__price-text {
+        color: $main-text;
+      }
+    }
+  }
+  &:active {
+    background-color: #000000;
+    opacity: 0.2;
+  }
 
   @media (min-width: $desktop-width) {
     width: 178px;

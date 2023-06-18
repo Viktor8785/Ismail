@@ -1,0 +1,448 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1158px;
+  display: none;
+  &--active {
+    display: block;
+  }
+
+  @media (min-width: $desktop-width) {
+    display: none;
+    height: 910px;
+    justify-content: center;
+    align-items: center;
+    &--active {
+      display: flex;
+    }
+  }
+}
+
+.modal__bg {
+  width: 100%;
+  height: 1158px;
+  background-color: #000000;
+  opacity: 0.5;
+
+  @media (min-width: $desktop-width) {
+    height: 910px;
+  }
+}
+
+.modal__container {
+  position: absolute;
+  display: grid;
+  top: 60px;
+  width: calc(100% - 24px);
+  height: 482px;
+  margin-left: 12px;
+  background-color: #FFFFFF;
+  animation: top 0.3s;
+
+  @media (min-width: $desktop-width) {
+    top: auto;
+    width: 636px;
+    height: 512px;
+    margin-left: 0;
+  }
+}
+
+.modal__button {
+  position: relative;
+  width: 25px;
+  height: 25px;
+  margin: 0;
+  margin-top: 12px;
+  margin-right: 14px;
+  padding: 0;
+  justify-self: end;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+  &::before {
+    position: absolute;
+    display: block;
+    content: "";
+    width: 24px;
+    height: 3px;
+    background-color: #C1C1C1;
+    transform: rotate(45deg);
+  }
+  &::after {
+    position: absolute;
+    display: block;
+    content: "";
+    width: 24px;
+    height: 3px;
+    background-color: #C1C1C1;
+    transform: rotate(-45deg);
+  }
+  &:hover {
+    background-color: #000000;
+
+    @media (hover: none) and (pointer: coarse) {
+      background-color: transparent;
+    }
+    &::before,
+    &::after {
+      background-color: #FFFFFF;
+
+      @media (hover: none) and (pointer: coarse) {
+        background-color: #C1C1C1;
+      }
+    }
+  }
+  &:active {
+    background-color: #000000;
+    opacity: 0.2;
+  }
+}
+
+.modal__wrapper {
+  display: grid;
+  margin-left: 12px;
+  margin-right: 12px;
+  justify-items: center;
+
+  @media (min-width: $desktop-width) {
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+}
+
+.modal__title {
+  margin-top: 0;
+  text-align: center;
+
+  @media (min-width: $desktop-width) {
+    font-family: 'Mont';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 31px;
+    color: $main-text;
+  }
+}
+
+.modal__subtitle {
+  font-size: 14px;
+  line-height: 18px;
+  text-align: center;
+
+  @media (min-width: $desktop-width) {
+    font-family: 'Mont';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    color: #8A8A8A;
+  }
+}
+
+.modal__form {
+  width: 100%;
+  grid-template-rows: 248px min-content min-content;
+  &:invalid {
+    & .contacts__button {
+        opacity: 0.5;
+        cursor: default;
+    }
+    & .modal__button-calc {
+      &:hover {
+        background-color: $primary;
+      }
+    }
+  }
+}
+
+.modal__button-calc {
+  width: 100%;
+  &:hover {
+    background-color: #000000;
+    color: #FFFFFF;
+
+    @media (hover: none) and (pointer: coarse) {
+      background-color: $primary;
+    }
+  }
+  &:active {
+    background-color: #000000;
+    opacity: 0.2;
+  }
+}
+
+.modal-project {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1158px;
+  display: none;
+  &--active {
+    display: block;
+  }
+
+  @media (min-width: $desktop-width) {
+    display: none;
+    height: 910px;
+    justify-content: center;
+    align-items: center;
+    &--active {
+      display: flex;
+    }
+  }
+}
+
+.modal-project__container {
+  position: absolute;
+  display: grid;
+  top: 60px;
+  width: calc(100% - 24px);
+  height: 750px;
+  margin-left: 12px;
+  grid-template-rows: min-content;
+  background-color: #FFFFFF;
+  animation: top 0.3s;
+
+  @media (min-width: $desktop-width) {
+    top: auto;
+    width: 636px;
+    height: 817px;
+  }
+}
+
+.modal-project__wrapper {
+  margin-left: 12px;
+  margin-right: 12px;
+  justify-items: center;
+
+  @media (min-width: $desktop-width) {
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+}
+
+.modal-project__title {
+  display: block;
+  margin: 0;
+  margin-top: 10px;
+  padding: 0;
+  text-align: center;
+  letter-spacing: -0.02em;
+}
+
+.modal-project__subtitle {
+  display: block;
+  margin-top: 0;
+  margin-top: 12px;
+  padding: 0;
+  font-size: 14px;
+  line-height: 18px;
+  text-align: center;
+
+  @media (min-width: $desktop-width) {
+    font-family: 'Mont';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    color: #8A8A8A;
+  }
+}
+
+.modal-project__form {
+  width: 100%;
+  grid-template-rows: 460px min-content min-content;
+  &:invalid {
+    & .contacts__button {
+        opacity: 0.5;
+        cursor: default;
+    }
+    & .modal__button-calc {
+      &:hover {
+        background-color: $primary;
+      }
+    }
+  }
+}
+
+.modal-project__input {
+  display: block;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #D2D7DC;
+}
+
+.modal-project__label-title {
+  margin-bottom: 18px;
+  font-family: 'Mont';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  color: #B9C1C9;
+}
+
+.modal-project__label-wrapper {
+  display: flex;
+}
+
+.modal-project__label-subtitle {
+  display: flex;
+  margin-bottom: 12px;
+  align-items: center;
+}
+
+.modal-project__label-icon {
+  width: 24px;
+  height: 24px;
+  background-image: url(../../img/modal-project-icon.svg);
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.modal-project__label-text {
+  margin: 0;
+  margin-left: 12px;
+  font-family: 'Mont';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  color: #8A8A8A;
+  &--done {
+    color: $main-text;
+  }
+}
+
+.modal-confirm {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1158px;
+  display: none;
+  &--active {
+    display: block;
+  }
+
+  @media (min-width: $desktop-width) {
+    display: none;
+    height: 910px;
+    justify-content: center;
+    align-items: center;
+    &--active {
+      display: flex;
+    }
+  }
+}
+
+.modal-confirm__container {
+  position: absolute;
+  display: grid;
+  top: 60px;
+  width: calc(100% - 24px);
+  height: 578px;
+  margin-left: 12px;
+  grid-template-rows: min-content;
+  background-color: #FFFFFF;
+  animation: top 0.3s;
+
+
+  @media (min-width: $desktop-width) {
+    top: auto;
+    width: 636px;
+    height: 657px;
+  }
+}
+
+.modal-confirm__wrapper {
+  display: grid;
+  justify-items: center;
+}
+
+.modal-confirm__title {
+  display: block;
+  margin: 0;
+  font-family: 'Mont';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 36px;
+  text-align: center;
+  justify-self: center;
+  color: $main-text;
+
+  @media (min-width: $desktop-width) {
+    font-size: 40px;
+    line-height: 51px;
+  }
+}
+
+.modal-confirm__subtitle {
+  margin: 0;
+  font-family: 'Mont';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+  text-align: center;
+  color: #8A8A8A;
+
+  @media (min-width: $desktop-width) {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+
+.modal-confirm__advertising {
+  font-family: 'Mont';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 23px;
+  text-align: center;
+  color: $main-text;
+
+  @media (min-width: $desktop-width) {
+    font-size: 20px;
+    line-height: 26px;
+  }
+}
+
+.modal-confirm__button {
+  justify-self: center;
+  text-decoration: none;
+  &:hover {
+    background-color: #000000;
+    color: #FFFFFF;
+
+    @media (hover: none) and (pointer: coarse) {
+      background-color: $primary;
+    }
+  }
+  &:active {
+    background-color: #000000;
+    opacity: 0.2;
+  }
+}
+
+.modal-confirm__button-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.modal-confirm__icon {
+  display: block;
+  width: 20px;
+  height: 20px;
+  margin-left: 12px;
+  background-image: url(../../img/modal-confirm-icon.svg);
+  background-repeat: no-repeat;
+}
+
+.modal-confirm__picture {
+  line-height: 0;
+}

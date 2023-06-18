@@ -15,6 +15,12 @@
   display: block;
   text-decoration: none;
   color: $main-text;
+  &.main-nav__item-social:hover {
+    filter: brightness(130%);
+  }
+  &.main-nav__item-social:active {
+    opacity: 0.4;
+  }
 }
 
 .main-nav__item-first {
@@ -30,6 +36,29 @@
   grid-template-columns: min-content max-content;
   align-items: end;
   text-decoration: none;
+  &:hover {
+    & .main-nav__item-logo {
+      filter: brightness(130%);
+    }
+    & .main-nav__item-subtitle,
+    & .main-nav__item-title {
+      filter: brightness(300%);
+    }
+
+    @media (hover: none) and (pointer: coarse) {
+      & .main-nav__item-logo {
+        filter: brightness(100%);
+      }
+      & .main-nav__item-subtitle,
+      & .main-nav__item-title {
+        filter: brightness(100%);
+      }
+    }
+  }
+  &:active {
+    background-color: #000000;
+    opacity: 0.2;
+  }
 }
 
 .main-nav__item-logo {
@@ -106,6 +135,19 @@
   font-size: 20px;
   line-height: 26px;
   color: #333333;
+  &:hover {
+    background-color: #000000;
+    color: #FFFFFF;
+
+    @media (hover: none) and (pointer: coarse) {
+      background-color: transparent;
+      color: $main-text;
+    }
+  }
+  &:active {
+    background-color: #000000;
+    opacity: 0.2;
+  }
 
   @media (min-width: $desktop-width) {
     margin-left: 40px;
@@ -138,6 +180,17 @@
   @media (min-width: $desktop-width) {
     margin: 0;
     margin-right: 150px;
+  }
+  &:hover {
+    background-color: #000000;
+
+    @media (hover: none) and (pointer: coarse) {
+      background-color: $primary;
+    }
+  }
+  &:active {
+    background-color: #000000;
+    opacity: 0.2;
   }
 }
 
@@ -179,6 +232,10 @@
       }
     }
   }
+  &:active {
+    background-color: #000000;
+    opacity: 0.2;
+  }
   &--opened {
     background-color: $primary;
     &::before {
@@ -214,5 +271,9 @@
         background-color: #FFFFFF;
       }
     }
+  }
+
+  @media (min-width: $desktop-width) {
+    display: none;
   }
 }

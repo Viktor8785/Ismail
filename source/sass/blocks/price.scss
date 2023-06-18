@@ -122,9 +122,19 @@
   display: grid;
   grid-template-rows: 390px min-content min-content min-content;
   height: 390px;
-  &:invalid .price__button-next {
-    opacity: 0.5;
-    cursor: default;
+  border: none;
+  &:invalid {
+    & .price__button-next {
+        opacity: 0.5;
+        cursor: default;
+    }
+    & .price__button-next {
+      &:hover {
+        background-color: $primary;
+        opacity: 0.5;
+        cursor: default;
+      }
+    }
   }
 
   @media (min-width: $desktop-width) {
@@ -174,48 +184,108 @@
     }
     &--garage1 {
       background-image: url('../../img/price-garage1.jpg');
+
+      @media (min-resolution: 2dppx) {
+        background-image: url('../../img/price-garage1@2x.jpg');
+      }
     }
     &--garage2 {
       background-image: url('../../img/price-garage2.jpg');
+
+      @media (min-resolution: 2dppx) {
+        background-image: url('../../img/price-garage2@2x.jpg');
+      }
     }
     &--garage0 {
       background-image: url('../../img/price-garage0.jpg');
+
+      @media (min-resolution: 2dppx) {
+        background-image: url('../../img/price-garage0@2x.jpg');
+      }
     }
     &--flors1 {
       background-image: url('../../img/price-flors1.jpg');
+
+      @media (min-resolution: 2dppx) {
+        background-image: url('../../img/price-flors1@2x.jpg');
+      }
     }
     &--flors2 {
       background-image: url('../../img/price-flors2.jpg');
+
+      @media (min-resolution: 2dppx) {
+        background-image: url('../../img/price-flors2@2x.jpg');
+      }
     }
     &--walls1 {
       background-image: url('../../img/price-walls1.jpg');
+
+      @media (min-resolution: 2dppx) {
+        background-image: url('../../img/price-walls1@2x.jpg');
+      }
     }
     &--walls2 {
       background-image: url('../../img/price-walls2.jpg');
+
+      @media (min-resolution: 2dppx) {
+        background-image: url('../../img/price-walls2@2x.jpg');
+      }
     }
     &--walls3 {
       background-image: url('../../img/price-walls3.jpg');
+
+      @media (min-resolution: 2dppx) {
+        background-image: url('../../img/price-walls3@2x.jpg');
+      }
     }
     &--roof1 {
       background-image: url('../../img/price-roof1.jpg');
+
+      @media (min-resolution: 2dppx) {
+        background-image: url('../../img/price-roof1@2x.jpg');
+      }
     }
     &--roof2 {
       background-image: url('../../img/price-roof2.jpg');
+
+      @media (min-resolution: 2dppx) {
+        background-image: url('../../img/price-roof2@2x.jpg');
+      }
     }
     &--roof3 {
       background-image: url('../../img/price-roof3.jpg');
+
+      @media (min-resolution: 2dppx) {
+        background-image: url('../../img/price-roof3@2x.jpg');
+      }
     }
     &--front1 {
       background-image: url('../../img/price-front1.jpg');
+
+      @media (min-resolution: 2dppx) {
+        background-image: url('../../img/price-front1@2x.jpg');
+      }
     }
     &--front2 {
       background-image: url('../../img/price-front2.jpg');
+
+      @media (min-resolution: 2dppx) {
+        background-image: url('../../img/price-front2@2x.jpg');
+      }
     }
     &--front3 {
       background-image: url('../../img/price-front3.jpg');
+
+      @media (min-resolution: 2dppx) {
+        background-image: url('../../img/price-front3@2x.jpg');
+      }
     }
     &--front4 {
       background-image: url('../../img/price-front4.jpg');
+
+      @media (min-resolution: 2dppx) {
+        background-image: url('../../img/price-front4@2x.jpg');
+      }
     }
   }
 }
@@ -286,6 +356,36 @@
   align-items: center;
   justify-content: center;
   opacity: 1;
+}
+
+.price__button.garage__button-prev {
+  &:hover {
+    background-color: #000000;
+    color: #FFFFFF;
+
+    @media (hover: none) and (pointer: coarse) {
+      background-color: #FFFFFF;
+    }
+  }
+  &:active {
+    background-color: #000000;
+    opacity: 0.2;
+  }
+}
+
+.price__button.price__button-next {
+  &:hover {
+    background-color: #000000;
+    color: #FFFFFF;
+
+    @media (hover: none) and (pointer: coarse) {
+      background-color: $primary;
+    }
+  }
+  &:active {
+    background-color: #000000;
+    opacity: 0.2;
+  }
 }
 
 .price__button-prev {
@@ -588,6 +688,8 @@
   color: #FFFFFF;
   background-color: $primary;
   cursor: pointer;
+  border: none;
+  outline: none;
 
   @media (min-width: $desktop-width) {
     width: 364px;
@@ -631,6 +733,10 @@
     user-select: none;
     background-color: #FFFFFF;
     border: 1px solid #78BE21;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding-top: 16px;
   }
 }
 
@@ -822,6 +928,10 @@
 
   @media (min-width: $desktop-width) {
     display: block;
-    background-image: url(../../img/price-chat-photo.jpg);
+    background-image: url('../../img/price-chat-photo.jpg');
+
+    @media (min-resolution: 2dppx) {
+      background-image: url('../../img/price-chat-photo@2x.jpg');
+    }
   }
 }

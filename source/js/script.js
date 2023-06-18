@@ -2,6 +2,12 @@
 /* -------------------- HEADER --------------------*/
 const mainNavGroup = document.querySelector('.main-nav__group');
 const mainNavToggle = document.querySelector('.main-nav__toggle');
+const mainNavProjectButton = document.querySelector('#main-nav-project-button');
+const mainNavSoc1Button = document.querySelector('#main-nav-soc1-button');
+const mainNavSoc2Button = document.querySelector('#main-nav-soc2-button');
+const mainNavSoc3Button = document.querySelector('#main-nav-soc3-button');
+const mainNavPhoneButton = document.querySelector('#main-nav-phone-button');
+const headerProjectButton = document.querySelector('#header-project-button');
 
 /* -----------------  BUILDINGS  ----------------- */
 const buttonLeft = document.querySelector('#button-left');
@@ -10,6 +16,10 @@ const buttonArrowLeft = document.querySelector('#button-arrow-left');
 const buttonArrowRight = document.querySelector('#button-arrow-right');
 const sliderContainer = document.querySelector('#slider-container');
 const buildingsCard = document.querySelectorAll('.buildings__card');
+
+/* -----------------  NOW  ----------------- */
+const buttonNowMeet1 = document.querySelector('#now-meet1');
+const buttonNowMeet2 = document.querySelector('#now-meet2');
 
 /* -----------------  PRICE  ----------------- */
 const buttonSquarePrev = document.querySelector('#button-square-prev');
@@ -39,6 +49,26 @@ const priceCalcFront = document.querySelector('.price__calc-front');
 const priceCalcContacts = document.querySelector('.price__calc-contacts');
 const priceCalcConfirm = document.querySelector('.price__calc-confirm');
 
+/* -----------------  MODAL  ----------------- */
+const modal = document.querySelector('.modal');
+const modalCloseButton = document.querySelector('.modal__button');
+const buttonModal = document.querySelector('#button-modal');
+const formModal = document.querySelector('#form-modal');
+
+/* -----------------  MODAL-project  ----------------- */
+const modalProject = document.querySelector('.modal-project');
+const modalProjectClose = document.querySelector('#modal-project-close');
+const buttonModalProject = document.querySelector('#button-modal-project');
+const formModalProject = document.querySelector('#form-modal-project');
+const fileModalProject = document.querySelector('#file-modal-project');
+const fileNameModalProject = document.querySelector('.modal-project__label-text');
+const footerProjectButton = document.querySelector('#footer-project-button');
+
+/* -----------------  MODAL-confirm  ----------------- */
+const modalConfirm = document.querySelector('.modal-confirm');
+const modalConfirmClose = document.querySelector('#modal-confirm-close');
+const buttonModalConfirm = document.querySelector('#button-modal-confirm');
+
 // Set initial state BUILDINGS
 const sliderItemsLength = buildingsCard.length;
 let leftXMax = -382;
@@ -67,6 +97,16 @@ let roofCurrent = '';
 let contactsNameCurrent = '';
 let contactsPhoneCurrent = '';
 
+// Set initial state MODAL
+let modalNameCurrent = '';
+let modalPhoneCurrent = '';
+
+// Set initial state MODAL-project
+let modalProjectNameCurrent = '';
+let modalProjectPhoneCurrent = '';
+let modalProjectCommentsCurrent = '';
+let modalProjectFileCurrent = '';
+
 //handleWidthChangeMobile(mediaQueryMobileOnly);
 //handleWidthChangeDesktop(mediaQueryDesktop);
 
@@ -80,9 +120,32 @@ mainNavToggle.addEventListener('click', () => {
   mainNavGroup.classList.add('main-nav__group--opened');
  }
 });
+mainNavProjectButton.addEventListener('click', () => {
+  mainNavToggle.classList.remove('main-nav__toggle--opened');
+  mainNavGroup.classList.remove('main-nav__group--opened');
+  modalProject.classList.add('modal-project--active');
+});
+mainNavSoc1Button.addEventListener('click', () => {
+  mainNavToggle.classList.remove('main-nav__toggle--opened');
+  mainNavGroup.classList.remove('main-nav__group--opened');
+});
+mainNavSoc2Button.addEventListener('click', () => {
+  mainNavToggle.classList.remove('main-nav__toggle--opened');
+  mainNavGroup.classList.remove('main-nav__group--opened');
+});
+mainNavSoc3Button.addEventListener('click', () => {
+  mainNavToggle.classList.remove('main-nav__toggle--opened');
+  mainNavGroup.classList.remove('main-nav__group--opened');
+});
+mainNavPhoneButton.addEventListener('click', () => {
+  mainNavToggle.classList.remove('main-nav__toggle--opened');
+  mainNavGroup.classList.remove('main-nav__group--opened');
+});
+headerProjectButton.addEventListener('click', () => {
+  modalProject.classList.add('modal-project--active');
+});
 
 /* ----------------  BUILDINGS  -------------- */
-
 buttonLeft.addEventListener('click', () => {
   currentIndexBuildings--;
   if (!buttonRight.classList.contains('buildings__button--active')) {
@@ -117,6 +180,15 @@ buttonLeft.addEventListener('click', () => {
   sliderContainer.style.left = leftX + 'px';
  });
 
+  /* -----------------  NOW  ----------------- */
+  buttonNowMeet1.addEventListener('click', () => {
+    window.scrollTo(0,0);
+    modal.classList.add('modal--active');
+  });
+  buttonNowMeet2.addEventListener('click', () => {
+    window.scrollTo(0,0);
+    modal.classList.add('modal--active');
+  });
  /* -----------------  PRICE  ----------------- */
  buttonSquareNext.addEventListener('click', () => {
     Array.from(priceSquareForm[0].elements).forEach((element, index) => {
@@ -226,4 +298,69 @@ buttonLeft.addEventListener('click', () => {
     formElements[2].checked = false;
     priceCalc.classList.add('price__calc--active');
     priceCalcConfirm.classList.remove('price__calc-confirm--active');
+  });
+
+  /* -----------------  MODAL  ----------------- */
+  modalCloseButton.addEventListener('click', () => {
+    formModal.elements[0].value = '';
+    formModal.elements[1].value = '';
+    formModal.elements[2].checked = false;
+    modal.classList.remove('modal--active');
+  });
+  buttonModal.addEventListener('click', () => {
+    if (formModal.elements[0].validity.valid && formModal.elements[1].validity.valid && formModal.elements[2].validity.valid) {
+      modalNameCurrent = formModal.elements[0].value;
+      modalPhoneCurrent = formModal.elements[1].value;
+      formModal.elements[0].value = '';
+      formModal.elements[1].value = '';
+      formModal.elements[2].checked = false;
+      modal.classList.remove('modal--active');
+    }
+  });
+
+  /* -----------------  MODAL-project  ----------------- */
+  fileModalProject.addEventListener('change', () => {
+    let file = fileModalProject.files[0].name;
+    fileNameModalProject.innerHTML = file;
+    fileNameModalProject.classList.add('modal-project__label-text--done');
+  });
+  modalProjectClose.addEventListener('click', () => {
+    fileNameModalProject.innerHTML = 'Ваш проект';
+    fileNameModalProject.classList.remove('modal-project__label-text--done');
+    formModalProject.elements[1].value = '';
+    formModalProject.elements[2].value = '';
+    formModalProject.elements[3].value = '';
+    formModalProject.elements[4].checked = false;
+    modalProject.classList.remove('modal-project--active');
+  });
+  buttonModalProject.addEventListener('click', () => {
+    if (formModalProject.elements[1].validity.valid &&
+        formModalProject.elements[2].validity.valid &&
+        formModalProject.elements[4].validity.valid) {
+          modalProjectFileCurrent = fileModalProject.files[0].name;
+          modalProjectNameCurrent = formModalProject.elements[1].value;
+          modalProjectPhoneCurrent = formModalProject.elements[2].value;
+          modalProjectCommentsCurrent = formModalProject.elements[3].value;
+          fileNameModalProject.innerHTML = 'Ваш проект';
+          fileNameModalProject.classList.remove('modal-project__label-text--done');
+          formModalProject.elements[1].value = '';
+          formModalProject.elements[2].value = '';
+          formModalProject.elements[3].value = '';
+          formModalProject.elements[4].checked = false;
+          modalProject.classList.remove('modal-project--active');
+          modalConfirm.classList.add('modal-confirm--active');
+    }
+  });
+  footerProjectButton.addEventListener('click', () => {
+    window.scrollTo(0,0);
+    modalProject.classList.add('modal-project--active');
+  });
+
+  /* -----------------  MODAL-confirm  ----------------- */
+
+  modalConfirmClose.addEventListener('click', () => {
+    modalConfirm.classList.remove('modal-confirm--active');
+  });
+  buttonModalConfirm.addEventListener('click', () => {
+    modalConfirm.classList.remove('modal-confirm--active');
   });
