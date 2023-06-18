@@ -199,9 +199,9 @@
 .modal-project__container {
   position: absolute;
   display: grid;
-  top: 60px;
+  top: 12px;
   width: calc(100% - 24px);
-  height: 750px;
+  height: 650px;
   margin-left: 12px;
   grid-template-rows: min-content;
   background-color: #FFFFFF;
@@ -266,6 +266,18 @@
         background-color: $primary;
       }
     }
+  }
+
+  @media (max-width: $mobile-width-only) {
+    grid-template-rows: 368px min-content min-content;
+  }
+}
+
+.modal-project__fields {
+
+  @media (max-width: $mobile-width-only) {
+    margin-top: 12px;
+    gap: 20px;
   }
 }
 
