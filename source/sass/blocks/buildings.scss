@@ -81,6 +81,10 @@
 
 .buildings__button:active.buildings__button--active{
   opacity: 0.2;
+
+  @media (hover: none) and (pointer: coarse) {
+    opacity: 1;
+  }
 }
 
 .buildings__button-left {
