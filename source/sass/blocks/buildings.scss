@@ -57,6 +57,11 @@
   &:hover {
     & .button__arrow-left,
     & .button__arrow-right {
+
+      @media (hover: none) and (pointer: coarse) {
+        border-bottom: 2px solid #B9C1C9;
+        border-right: 2px solid #B9C1C9;
+      }
       &--active {
         border-bottom: 2px solid #FFFFFF;
         border-right: 2px solid #FFFFFF;
